@@ -1,7 +1,7 @@
 #无用的word和pdf
-.doc
-.docx
-.pdf
+*.doc
+*.docx
+*.pdf
 
 # Prerequisites
 *.d

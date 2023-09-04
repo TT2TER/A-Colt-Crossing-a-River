@@ -1,0 +1,59 @@
+{
+  "options": {
+    "env": {
+      "Path": "E:\\Programs\\winlibs-x86_64-mcf-seh-gcc-13.2.0-llvm-16.0.6-mingw-w64ucrt-11.0.1-r2\\mingw64\\bin;${env:Path}"
+    }
+  },
+  "tasks": [
+    {
+      "args": [
+        "-g",
+        "${file}",
+        "-o",
+        "${fileDirname}\\${fileBasenameNoExtension}.exe",
+        "-std=c++11",
+        "-pthread"
+      ],
+      "command": "E:\\Programs\\winlibs-x86_64-mcf-seh-gcc-13.2.0-llvm-16.0.6-mingw-w64ucrt-11.0.1-r2\\mingw64\\bin\\g++.exe",
+      "group": {
+        "isDefault": true,
+        "kind": "build"
+      },
+      "label": "single file build",
+      "presentation": {
+        "clear": true,
+        "echo": false,
+        "focus": false,
+        "panel": "shared",
+        "reveal": "silent",
+        "showReuseMessage": false
+      },
+      "problemMatcher": "$gcc",
+      "type": "process"
+    },
+    {
+      "args": [
+        "-ExecutionPolicy",
+        "ByPass",
+        "-NoProfile",
+        "-File",
+        "C:\\Users\\MaYu\\AppData\\Roaming\\vscch/check-ascii.ps1",
+        "${fileDirname}\\${fileBasenameNoExtension}.exe"
+      ],
+      "command": "C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\powershell.exe",
+      "dependsOn": "single file build",
+      "label": "ascii check",
+      "presentation": {
+        "clear": true,
+        "echo": false,
+        "focus": false,
+        "panel": "shared",
+        "reveal": "never",
+        "showReuseMessage": false
+      },
+      "problemMatcher": [],
+      "type": "process"
+    }
+  ],
+  "version": "2.0.0"
+}

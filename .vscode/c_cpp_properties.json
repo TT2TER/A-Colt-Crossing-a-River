@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "compilerPath": "E:\\Programs\\winlibs-x86_64-mcf-seh-gcc-13.2.0-llvm-16.0.6-mingw-w64ucrt-11.0.1-r2\\mingw64\\bin\\g++.exe",
+      "cppStandard": "c++11",
+      "includePath": [
+        "${{workspaceFolder}}/**"
+      ],
+      "intelliSenseMode": "windows-gcc-x64",
+      "name": "Win32"
+    }
+  ],
+  "version": 4
+}
