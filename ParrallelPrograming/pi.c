@@ -27,7 +27,7 @@ void *compute_pi(void *arg)
         }
     }
     pthread_mutex_lock(&lock);
-    printf("in thread:%d \n", thread_id); 
+    printf("in thread你好:%d \n", thread_id); 
     points_inside_circle += points_inside_thread;
     pthread_mutex_unlock(&lock);
 
@@ -86,3 +86,6 @@ int main()
     printf("\nSpeedup: %lf\nParallel Efficiency: %lf\n", S8, E8);
     return 0;
 }
+
+
+
