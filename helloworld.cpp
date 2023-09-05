@@ -8,10 +8,35 @@
 // 按下 Ctrl + Shift + B 编译。
 
 #include <iostream>
+#include <fstream>
+#include <string>
 
-int main() {
+int main()
+{
     // 在标准输出中打印 "Hello, world!"
     std::cout << "Hello, world!" << std::endl;
+    // 文件路径
+    std::string filePath = "./example.txt";
+
+    // 尝试打开文件
+    std::ifstream inputFile(filePath);
+
+    // 检查文件是否成功打开
+    if (!inputFile.is_open())
+    {
+        std::cerr << "无法打开文件: " << filePath << std::endl;
+        return 1; // 返回错误代码
+    }
+
+    // 读取文件内容并打印字符串
+    std::string line;
+    while (std::getline(inputFile, line))
+    {
+        std::cout << line << std::endl;
+    }
+
+    // 关闭文件
+    inputFile.close();
 }
 
 // 此文件编译运行将输出 "Hello, world!"。
