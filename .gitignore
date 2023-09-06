@@ -38,3 +38,7 @@
 *.app
 
 *.json
+
+*test*.*
+*output*.*
+*example*.*

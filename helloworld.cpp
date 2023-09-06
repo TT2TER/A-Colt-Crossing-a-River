@@ -37,6 +37,7 @@ int main()
 
     // 关闭文件
     inputFile.close();
+    printf("中文测试");
 }
 
 // 此文件编译运行将输出 "Hello, world!"。
