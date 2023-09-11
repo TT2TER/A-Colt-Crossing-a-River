@@ -34,8 +34,13 @@ int main()
     {
         std::cout << line << std::endl;
     }
+    //print helloworld
+    std::cout << "Hello, world!" << std::endl;
+
+    
 
     // 关闭文件
+    
     inputFile.close();
     printf("中文测试");
 }
