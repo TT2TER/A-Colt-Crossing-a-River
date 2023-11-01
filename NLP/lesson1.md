@@ -15,9 +15,13 @@
 ## 文本分类
 ## 翻译
 ## 信息检索
+<<<<<<< HEAD
 ## 文本复述
 
 ACL EMNLP NAACL
 
 [svm](https://zhuanlan.zhihu.com/p/49331510)
 [最大熵模型](https://zhuanlan.zhihu.com/p/29978153)
+=======
+## 文本复述
+>>>>>>> 2c556666facda6bc2f9418be0437c5389cb8d6ac

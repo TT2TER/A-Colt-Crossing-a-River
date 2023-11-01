@@ -45,6 +45,7 @@
 #文件夹
 easy-rl
 IntelligentSystem
+<<<<<<< HEAD
 *.zip
 *.egg
 AIsys/跨越险阻仿真赛软件
@@ -60,3 +61,5 @@ RL/RLexample
 *result*.*
 *.pkl
 RL/rainbow-is-all-you-need
+=======
+>>>>>>> 2c556666facda6bc2f9418be0437c5389cb8d6ac
