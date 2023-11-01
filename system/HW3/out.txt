@@ -1,0 +1,1687 @@
+System Memory Information:
+Page Size: 4 KB
+Minimum Application Address: 0x10000
+Maximum Application Address: 0x7ffffffeffff
+Allocation Granularity: 64 KB
+
+There is 59 percent of memory in use.
+Total Physical Memory: 23.6848 GB
+Available Physical Memory: 9.51109 GB
+Total Virtual Memory: 128 TB
+Available Virtual Memory: 127.996 TB
+Total Page File: 45.6848 GB
+Available Page File: 23.8676 GB
+
+Commit Total              	5.45429 M-pages
+Commit Total              	21.8172 GB
+Commit Limit              	11.4212 M-pages
+Commit Limit              	45.6848 GB
+Commit Peak               	5.65533 M-pages
+Commit Peak              	22.6213 GB
+Physical Memory           	5.92119 M-pages
+Physical Memory           	23.6848 GB
+Physical Memory Available 	2.37776 M-pages
+Physical Memory Available 	9.51105 GB
+System Cache              	1.21803 M-pages
+Kernel Total              	0.388638 M-pages
+Kernel Paged              	0.161352 M-pages
+Kernel Nonpaged           	0.227286 M-pages
+Handle Count              	245711
+Process Count             	403
+Thread Count              	5834
+
+----------------------------------------
+Virtual Memory Information:
+Executable File: E:\MAYU\Documents\A-Colt-Crossing-a-River\system\HW3\main.exe
+
+Base Address: 0x10000
+Allocation Base: 0x10000
+Region Size: 64 KB
+End Address: 0x20000
+State: Committed
+Protect: Read Write
+Type: Mapped
+Module Name: 
+
+Base Address: 0x20000
+Allocation Base: 0x20000
+Region Size: 4 KB
+End Address: 0x21000
+State: Committed
+Protect: Read Only
+Type: Mapped
+Module Name: 
+
+Base Address: 0x21000
+Allocation Base: 0
+Region Size: 60 KB
+End Address: 0x30000
+State: Free
+Protect: No Access
+Module Name: 
+
+Base Address: 0x30000
+Allocation Base: 0x30000
+Region Size: 116 KB
+End Address: 0x4d000
+State: Committed
+Protect: Read Only
+Type: Mapped
+Module Name: 
+
+Base Address: 0x4d000
+Allocation Base: 0
+Region Size: 12 KB
+End Address: 0x50000
+State: Free
+Protect: No Access
+Module Name: 
+
+Base Address: 0x50000
+Allocation Base: 0x50000
+Region Size: 16 KB
+End Address: 0x54000
+State: Committed
+Protect: Read Only
+Type: Mapped
+Module Name: 
+
+Base Address: 0x54000
+Allocation Base: 0
+Region Size: 48 KB
+End Address: 0x60000
+State: Free
+Protect: No Access
+Module Name: 
+
+Base Address: 0x60000
+Allocation Base: 0x60000
+Region Size: 8 KB
+End Address: 0x62000
+State: Committed
+Protect: Read Write
+Type: Private
+Module Name: 
+
+Base Address: 0x62000
+Allocation Base: 0
+Region Size: 56 KB
+End Address: 0x70000
+State: Free
+Protect: No Access
+Module Name: 
+
+Base Address: 0x70000
+Allocation Base: 0x70000
+Region Size: 804 KB
+End Address: 0x139000
+State: Committed
+Protect: Read Only
+Type: Mapped
+Module Name: 
+
+Base Address: 0x139000
+Allocation Base: 0
+Region Size: 28 KB
+End Address: 0x140000
+State: Free
+Protect: No Access
+Module Name: 
+
+Base Address: 0x140000
+Allocation Base: 0x140000
+Region Size: 4 KB
+End Address: 0x141000
+State: Committed
+Protect: Read Only
+Type: Mapped
+Module Name: 
+
+Base Address: 0x141000
+Allocation Base: 0
+Region Size: 60 KB
+End Address: 0x150000
+State: Free
+Protect: No Access
+Module Name: 
+
+Base Address: 0x150000
+Allocation Base: 0x150000
+Region Size: 4 KB
+End Address: 0x151000
+State: Committed
+Protect: Read Only
+Type: Mapped
+Module Name: 
+
+Base Address: 0x151000
+Allocation Base: 0
+Region Size: 60 KB
+End Address: 0x160000
+State: Free
+Protect: No Access
+Module Name: 
+
+Base Address: 0x160000
+Allocation Base: 0x160000
+Region Size: 8 KB
+End Address: 0x162000
+State: Committed
+Protect: Read Write
+Type: Private
+Module Name: 
+
+Base Address: 0x162000
+Allocation Base: 0x160000
+Region Size: 384 KB
+End Address: 0x1c2000
+State: Reserved
+Type: Private
+Module Name: 
+
+Base Address: 0x1c2000
+Allocation Base: 0
+Region Size: 56 KB
+End Address: 0x1d0000
+State: Free
+Protect: No Access
+Module Name: 
+
+Base Address: 0x1d0000
+Allocation Base: 0x1d0000
+Region Size: 16 KB
+End Address: 0x1d4000
+State: Committed
+Protect: Read Only
+Type: Mapped
+Module Name: 
+
+Base Address: 0x1d4000
+Allocation Base: 0x1d0000
+Region Size: 16 KB
+End Address: 0x1d8000
+State: Reserved
+Type: Mapped
+Module Name: 
+
+Base Address: 0x1d8000
+Allocation Base: 0
+Region Size: 160 KB
+End Address: 0x200000
+State: Free
+Protect: No Access
+Module Name: 
+
+Base Address: 0x200000
+Allocation Base: 0x200000
+Region Size: 1712 KB
+End Address: 0x3ac000
+State: Reserved
+Type: Private
+Module Name: 
+
+Base Address: 0x3ac000
+Allocation Base: 0x200000
+Region Size: 36 KB
+End Address: 0x3b5000
+State: Committed
+Protect: Read Write
+Type: Private
+Module Name: 
+
+Base Address: 0x3b5000
+Allocation Base: 0x200000
+Region Size: 300 KB
+End Address: 0x400000
+State: Reserved
+Type: Private
+Module Name: 
+
+Base Address: 0x400000
+Allocation Base: 0x400000
+Region Size: 4 KB
+End Address: 0x401000
+State: Committed
+Protect: Read Only
+Type: Image
+Module Name: E:\MAYU\Documents\A-Colt-Crossing-a-River\system\HW3\main.exe
+
+Base Address: 0x401000
+Allocation Base: 0x400000
+Region Size: 32 KB
+End Address: 0x409000
+State: Committed
+Protect: Execute Read
+Type: Image
+Module Name: E:\MAYU\Documents\A-Colt-Crossing-a-River\system\HW3\main.exe
+
+Base Address: 0x409000
+Allocation Base: 0x400000
+Region Size: 4 KB
+End Address: 0x40a000
+State: Committed
+Protect: Read Write
+Type: Image
+Module Name: E:\MAYU\Documents\A-Colt-Crossing-a-River\system\HW3\main.exe
+
+Base Address: 0x40a000
+Allocation Base: 0x400000
+Region Size: 12 KB
+End Address: 0x40d000
+State: Committed
+Protect: Read Only
+Type: Image
+Module Name: E:\MAYU\Documents\A-Colt-Crossing-a-River\system\HW3\main.exe
+
+Base Address: 0x40d000
+Allocation Base: 0x400000
+Region Size: 12 KB
+End Address: 0x410000
+State: Committed
+Protect: Read Write
+Type: Image
+Module Name: E:\MAYU\Documents\A-Colt-Crossing-a-River\system\HW3\main.exe
+
+Base Address: 0x410000
+Allocation Base: 0x400000
+Region Size: 8 KB
+End Address: 0x412000
+State: Committed
+Protect: Write Copy
+Type: Image
+Module Name: E:\MAYU\Documents\A-Colt-Crossing-a-River\system\HW3\main.exe
+
+Base Address: 0x412000
+Allocation Base: 0x400000
+Region Size: 28 KB
+End Address: 0x419000
+State: Committed
+Protect: Read Only
+Type: Image
+Module Name: E:\MAYU\Documents\A-Colt-Crossing-a-River\system\HW3\main.exe
+
+Base Address: 0x419000
+Allocation Base: 0
+Region Size: 28 KB
+End Address: 0x420000
+State: Free
+Protect: No Access
+Module Name: E:\MAYU\Documents\A-Colt-Crossing-a-River\system\HW3\main.exe
+
+Base Address: 0x420000
+Allocation Base: 0x420000
+Region Size: 2024 KB
+End Address: 0x61a000
+State: Reserved
+Type: Private
+Module Name: E:\MAYU\Documents\A-Colt-Crossing-a-River\system\HW3\main.exe
+
+Base Address: 0x61a000
+Allocation Base: 0x420000
+Region Size: 12 KB
+End Address: 0x61d000
+State: Committed
+Type: Private
+Module Name: E:\MAYU\Documents\A-Colt-Crossing-a-River\system\HW3\main.exe
+
+Base Address: 0x61d000
+Allocation Base: 0x420000
+Region Size: 12 KB
+End Address: 0x620000
+State: Committed
+Protect: Read Write
+Type: Private
+Module Name: E:\MAYU\Documents\A-Colt-Crossing-a-River\system\HW3\main.exe
+
+Base Address: 0x620000
+Allocation Base: 0x620000
+Region Size: 4 KB
+End Address: 0x621000
+State: Committed
+Protect: Read Write
+Type: Private
+Module Name: E:\MAYU\Documents\A-Colt-Crossing-a-River\system\HW3\main.exe
+
+Base Address: 0x621000
+Allocation Base: 0x620000
+Region Size: 388 KB
+End Address: 0x682000
+State: Reserved
+Type: Private
+Module Name: E:\MAYU\Documents\A-Colt-Crossing-a-River\system\HW3\main.exe
+
+Base Address: 0x682000
+Allocation Base: 0
+Region Size: 312 KB
+End Address: 0x6d0000
+State: Free
+Protect: No Access
+Module Name: E:\MAYU\Documents\A-Colt-Crossing-a-River\system\HW3\main.exe
+
+Base Address: 0x6d0000
+Allocation Base: 0x6d0000
+Region Size: 60 KB
+End Address: 0x6df000
+State: Committed
+Protect: Read Write
+Type: Private
+Module Name: E:\MAYU\Documents\A-Colt-Crossing-a-River\system\HW3\main.exe
+
+Base Address: 0x6df000
+Allocation Base: 0x6d0000
+Region Size: 4 KB
+End Address: 0x6e0000
+State: Reserved
+Type: Private
+Module Name: E:\MAYU\Documents\A-Colt-Crossing-a-River\system\HW3\main.exe
+
+Base Address: 0x6e0000
+Allocation Base: 0
+Region Size: 128 KB
+End Address: 0x700000
+State: Free
+Protect: No Access
+Module Name: E:\MAYU\Documents\A-Colt-Crossing-a-River\system\HW3\main.exe
+
+Base Address: 0x700000
+Allocation Base: 0x700000
+Region Size: 120 KB
+End Address: 0x71e000
+State: Committed
+Protect: Read Write
+Type: Private
+Module Name: E:\MAYU\Documents\A-Colt-Crossing-a-River\system\HW3\main.exe
+
+Base Address: 0x71e000
+Allocation Base: 0x700000
+Region Size: 16 KB
+End Address: 0x722000
+State: Reserved
+Type: Private
+Module Name: E:\MAYU\Documents\A-Colt-Crossing-a-River\system\HW3\main.exe
+
+Base Address: 0x722000
+Allocation Base: 0x700000
+Region Size: 16 KB
+End Address: 0x726000
+State: Committed
+Protect: Read Write
+Type: Private
+Module Name: E:\MAYU\Documents\A-Colt-Crossing-a-River\system\HW3\main.exe
+
+Base Address: 0x726000
+Allocation Base: 0x700000
+Region Size: 712 KB
+End Address: 0x7d8000
+State: Reserved
+Type: Private
+Module Name: E:\MAYU\Documents\A-Colt-Crossing-a-River\system\HW3\main.exe
+
+Base Address: 0x7d8000
+Allocation Base: 0x700000
+Region Size: 4 KB
+End Address: 0x7d9000
+State: Committed
+Protect: Read Write
+Type: Private
+Module Name: E:\MAYU\Documents\A-Colt-Crossing-a-River\system\HW3\main.exe
+
+Base Address: 0x7d9000
+Allocation Base: 0x700000
+Region Size: 156 KB
+End Address: 0x800000
+State: Reserved
+Type: Private
+Module Name: E:\MAYU\Documents\A-Colt-Crossing-a-River\system\HW3\main.exe
+
+Base Address: 0x800000
+Allocation Base: 0x800000
+Region Size: 2020 KB
+End Address: 0x9f9000
+State: Reserved
+Type: Private
+Module Name: E:\MAYU\Documents\A-Colt-Crossing-a-River\system\HW3\main.exe
+
+Base Address: 0x9f9000
+Allocation Base: 0x800000
+Region Size: 12 KB
+End Address: 0x9fc000
+State: Committed
+Type: Private
+Module Name: E:\MAYU\Documents\A-Colt-Crossing-a-River\system\HW3\main.exe
+
+Base Address: 0x9fc000
+Allocation Base: 0x800000
+Region Size: 16 KB
+End Address: 0xa00000
+State: Committed
+Protect: Read Write
+Type: Private
+Module Name: E:\MAYU\Documents\A-Colt-Crossing-a-River\system\HW3\main.exe
+
+Base Address: 0xa00000
+Allocation Base: 0xa00000
+Region Size: 2028 KB
+End Address: 0xbfb000
+State: Reserved
+Type: Private
+Module Name: E:\MAYU\Documents\A-Colt-Crossing-a-River\system\HW3\main.exe
+
+Base Address: 0xbfb000
+Allocation Base: 0xa00000
+Region Size: 12 KB
+End Address: 0xbfe000
+State: Committed
+Type: Private
+Module Name: E:\MAYU\Documents\A-Colt-Crossing-a-River\system\HW3\main.exe
+
+Base Address: 0xbfe000
+Allocation Base: 0xa00000
+Region Size: 8 KB
+End Address: 0xc00000
+State: Committed
+Protect: Read Write
+Type: Private
+Module Name: E:\MAYU\Documents\A-Colt-Crossing-a-River\system\HW3\main.exe
+
+Base Address: 0xc00000
+Allocation Base: 0xc00000
+Region Size: 2028 KB
+End Address: 0xdfb000
+State: Reserved
+Type: Private
+Module Name: E:\MAYU\Documents\A-Colt-Crossing-a-River\system\HW3\main.exe
+
+Base Address: 0xdfb000
+Allocation Base: 0xc00000
+Region Size: 12 KB
+End Address: 0xdfe000
+State: Committed
+Type: Private
+Module Name: E:\MAYU\Documents\A-Colt-Crossing-a-River\system\HW3\main.exe
+
+Base Address: 0xdfe000
+Allocation Base: 0xc00000
+Region Size: 8 KB
+End Address: 0xe00000
+State: Committed
+Protect: Read Write
+Type: Private
+Module Name: E:\MAYU\Documents\A-Colt-Crossing-a-River\system\HW3\main.exe
+
+Base Address: 0xe00000
+Allocation Base: 0xe00000
+Region Size: 164 KB
+End Address: 0xe29000
+State: Committed
+Protect: Read Only
+Type: Mapped
+Module Name: E:\MAYU\Documents\A-Colt-Crossing-a-River\system\HW3\main.exe
+
+Base Address: 0xe29000
+Allocation Base: 0xe00000
+Region Size: 1884 KB
+End Address: 0x1000000
+State: Reserved
+Type: Mapped
+Module Name: E:\MAYU\Documents\A-Colt-Crossing-a-River\system\HW3\main.exe
+
+Base Address: 0x1000000
+Allocation Base: 0x1000000
+Region Size: 1540 KB
+End Address: 0x1181000
+State: Committed
+Protect: Read Only
+Type: Mapped
+Module Name: E:\MAYU\Documents\A-Colt-Crossing-a-River\system\HW3\main.exe
+
+Base Address: 0x1181000
+Allocation Base: 0
+Region Size: 60 KB
+End Address: 0x1190000
+State: Free
+Protect: No Access
+Module Name: E:\MAYU\Documents\A-Colt-Crossing-a-River\system\HW3\main.exe
+
+Base Address: 0x1190000
+Allocation Base: 0x1190000
+Region Size: 1856 KB
+End Address: 0x1360000
+State: Committed
+Protect: Read Only
+Type: Mapped
+Module Name: E:\MAYU\Documents\A-Colt-Crossing-a-River\system\HW3\main.exe
+
+Base Address: 0x1360000
+Allocation Base: 0x1190000
+Region Size: 18628 KB
+End Address: 0x2591000
+State: Reserved
+Type: Mapped
+Module Name: E:\MAYU\Documents\A-Colt-Crossing-a-River\system\HW3\main.exe
+
+Base Address: 0x2591000
+Allocation Base: 0
+Region Size: 60 KB
+End Address: 0x25a0000
+State: Free
+Protect: No Access
+Module Name: E:\MAYU\Documents\A-Colt-Crossing-a-River\system\HW3\main.exe
+
+Base Address: 0x25a0000
+Allocation Base: 0x25a0000
+Region Size: 80 KB
+End Address: 0x25b4000
+State: Committed
+Protect: Read Write
+Type: Private
+Module Name: E:\MAYU\Documents\A-Colt-Crossing-a-River\system\HW3\main.exe
+
+Base Address: 0x25b4000
+Allocation Base: 0x25a0000
+Region Size: 944 KB
+End Address: 0x26a0000
+State: Reserved
+Type: Private
+Module Name: E:\MAYU\Documents\A-Colt-Crossing-a-River\system\HW3\main.exe
+
+Base Address: 0x26a0000
+Allocation Base: 0
+Region Size: 1.48206 GB
+End Address: 0x61440000
+State: Free
+Protect: No Access
+Module Name: E:\MAYU\Documents\A-Colt-Crossing-a-River\system\HW3\main.exe
+
+Base Address: 0x61440000
+Allocation Base: 0x61440000
+Region Size: 4 KB
+End Address: 0x61441000
+State: Committed
+Protect: Read Only
+Type: Image
+Module Name: C:\Users\MaYu\anaconda3\envs\joyrl\Library\mingw-w64\bin\libgcc_s_seh-1.dll
+
+Base Address: 0x61441000
+Allocation Base: 0x61440000
+Region Size: 60 KB
+End Address: 0x61450000
+State: Committed
+Protect: Execute Read
+Type: Image
+Module Name: C:\Users\MaYu\anaconda3\envs\joyrl\Library\mingw-w64\bin\libgcc_s_seh-1.dll
+
+Base Address: 0x61450000
+Allocation Base: 0x61440000
+Region Size: 4 KB
+End Address: 0x61451000
+State: Committed
+Protect: Read Write
+Type: Image
+Module Name: C:\Users\MaYu\anaconda3\envs\joyrl\Library\mingw-w64\bin\libgcc_s_seh-1.dll
+
+Base Address: 0x61451000
+Allocation Base: 0x61440000
+Region Size: 20 KB
+End Address: 0x61456000
+State: Committed
+Protect: Read Only
+Type: Image
+Module Name: C:\Users\MaYu\anaconda3\envs\joyrl\Library\mingw-w64\bin\libgcc_s_seh-1.dll
+
+Base Address: 0x61456000
+Allocation Base: 0x61440000
+Region Size: 4 KB
+End Address: 0x61457000
+State: Committed
+Protect: Read Write
+Type: Image
+Module Name: C:\Users\MaYu\anaconda3\envs\joyrl\Library\mingw-w64\bin\libgcc_s_seh-1.dll
+
+Base Address: 0x61457000
+Allocation Base: 0x61440000
+Region Size: 4 KB
+End Address: 0x61458000
+State: Committed
+Protect: Read Only
+Type: Image
+Module Name: C:\Users\MaYu\anaconda3\envs\joyrl\Library\mingw-w64\bin\libgcc_s_seh-1.dll
+
+Base Address: 0x61458000
+Allocation Base: 0x61440000
+Region Size: 4 KB
+End Address: 0x61459000
+State: Committed
+Protect: Read Write
+Type: Image
+Module Name: C:\Users\MaYu\anaconda3\envs\joyrl\Library\mingw-w64\bin\libgcc_s_seh-1.dll
+
+Base Address: 0x61459000
+Allocation Base: 0x61440000
+Region Size: 8 KB
+End Address: 0x6145b000
+State: Committed
+Protect: Write Copy
+Type: Image
+Module Name: C:\Users\MaYu\anaconda3\envs\joyrl\Library\mingw-w64\bin\libgcc_s_seh-1.dll
+
+Base Address: 0x6145b000
+Allocation Base: 0x61440000
+Region Size: 4 KB
+End Address: 0x6145c000
+State: Committed
+Protect: Read Only
+Type: Image
+Module Name: C:\Users\MaYu\anaconda3\envs\joyrl\Library\mingw-w64\bin\libgcc_s_seh-1.dll
+
+Base Address: 0x6145c000
+Allocation Base: 0
+Region Size: 54160 KB
+End Address: 0x64940000
+State: Free
+Protect: No Access
+Module Name: C:\Users\MaYu\anaconda3\envs\joyrl\Library\mingw-w64\bin\libgcc_s_seh-1.dll
+
+Base Address: 0x64940000
+Allocation Base: 0x64940000
+Region Size: 4 KB
+End Address: 0x64941000
+State: Committed
+Protect: Read Only
+Type: Image
+Module Name: C:\Users\MaYu\anaconda3\envs\joyrl\Library\mingw-w64\bin\libwinpthread-1.dll
+
+Base Address: 0x64941000
+Allocation Base: 0x64940000
+Region Size: 32 KB
+End Address: 0x64949000
+State: Committed
+Protect: Execute Read
+Type: Image
+Module Name: C:\Users\MaYu\anaconda3\envs\joyrl\Library\mingw-w64\bin\libwinpthread-1.dll
+
+Base Address: 0x64949000
+Allocation Base: 0x64940000
+Region Size: 4 KB
+End Address: 0x6494a000
+State: Committed
+Protect: Read Write
+Type: Image
+Module Name: C:\Users\MaYu\anaconda3\envs\joyrl\Library\mingw-w64\bin\libwinpthread-1.dll
+
+Base Address: 0x6494a000
+Allocation Base: 0x64940000
+Region Size: 12 KB
+End Address: 0x6494d000
+State: Committed
+Protect: Read Only
+Type: Image
+Module Name: C:\Users\MaYu\anaconda3\envs\joyrl\Library\mingw-w64\bin\libwinpthread-1.dll
+
+Base Address: 0x6494d000
+Allocation Base: 0x64940000
+Region Size: 4 KB
+End Address: 0x6494e000
+State: Committed
+Protect: Read Write
+Type: Image
+Module Name: C:\Users\MaYu\anaconda3\envs\joyrl\Library\mingw-w64\bin\libwinpthread-1.dll
+
+Base Address: 0x6494e000
+Allocation Base: 0x64940000
+Region Size: 8 KB
+End Address: 0x64950000
+State: Committed
+Protect: Read Only
+Type: Image
+Module Name: C:\Users\MaYu\anaconda3\envs\joyrl\Library\mingw-w64\bin\libwinpthread-1.dll
+
+Base Address: 0x64950000
+Allocation Base: 0x64940000
+Region Size: 4 KB
+End Address: 0x64951000
+State: Committed
+Protect: Read Write
+Type: Image
+Module Name: C:\Users\MaYu\anaconda3\envs\joyrl\Library\mingw-w64\bin\libwinpthread-1.dll
+
+Base Address: 0x64951000
+Allocation Base: 0x64940000
+Region Size: 12 KB
+End Address: 0x64954000
+State: Committed
+Protect: Write Copy
+Type: Image
+Module Name: C:\Users\MaYu\anaconda3\envs\joyrl\Library\mingw-w64\bin\libwinpthread-1.dll
+
+Base Address: 0x64954000
+Allocation Base: 0x64940000
+Region Size: 4 KB
+End Address: 0x64955000
+State: Committed
+Protect: Read Only
+Type: Image
+Module Name: C:\Users\MaYu\anaconda3\envs\joyrl\Library\mingw-w64\bin\libwinpthread-1.dll
+
+Base Address: 0x64955000
+Allocation Base: 0
+Region Size: 183212 KB
+End Address: 0x6fc40000
+State: Free
+Protect: No Access
+Module Name: C:\Users\MaYu\anaconda3\envs\joyrl\Library\mingw-w64\bin\libwinpthread-1.dll
+
+Base Address: 0x6fc40000
+Allocation Base: 0x6fc40000
+Region Size: 4 KB
+End Address: 0x6fc41000
+State: Committed
+Protect: Read Only
+Type: Image
+Module Name: C:\Users\MaYu\anaconda3\envs\joyrl\Library\mingw-w64\bin\libstdc++-6.dll
+
+Base Address: 0x6fc41000
+Allocation Base: 0x6fc40000
+Region Size: 792 KB
+End Address: 0x6fd07000
+State: Committed
+Protect: Execute Read
+Type: Image
+Module Name: C:\Users\MaYu\anaconda3\envs\joyrl\Library\mingw-w64\bin\libstdc++-6.dll
+
+Base Address: 0x6fd07000
+Allocation Base: 0x6fc40000
+Region Size: 16 KB
+End Address: 0x6fd0b000
+State: Committed
+Protect: Read Write
+Type: Image
+Module Name: C:\Users\MaYu\anaconda3\envs\joyrl\Library\mingw-w64\bin\libstdc++-6.dll
+
+Base Address: 0x6fd0b000
+Allocation Base: 0x6fc40000
+Region Size: 224 KB
+End Address: 0x6fd43000
+State: Committed
+Protect: Read Only
+Type: Image
+Module Name: C:\Users\MaYu\anaconda3\envs\joyrl\Library\mingw-w64\bin\libstdc++-6.dll
+
+Base Address: 0x6fd43000
+Allocation Base: 0x6fc40000
+Region Size: 8 KB
+End Address: 0x6fd45000
+State: Committed
+Protect: Read Write
+Type: Image
+Module Name: C:\Users\MaYu\anaconda3\envs\joyrl\Library\mingw-w64\bin\libstdc++-6.dll
+
+Base Address: 0x6fd45000
+Allocation Base: 0x6fc40000
+Region Size: 348 KB
+End Address: 0x6fd9c000
+State: Committed
+Protect: Read Only
+Type: Image
+Module Name: C:\Users\MaYu\anaconda3\envs\joyrl\Library\mingw-w64\bin\libstdc++-6.dll
+
+Base Address: 0x6fd9c000
+Allocation Base: 0x6fc40000
+Region Size: 4 KB
+End Address: 0x6fd9d000
+State: Committed
+Protect: Read Write
+Type: Image
+Module Name: C:\Users\MaYu\anaconda3\envs\joyrl\Library\mingw-w64\bin\libstdc++-6.dll
+
+Base Address: 0x6fd9d000
+Allocation Base: 0x6fc40000
+Region Size: 12 KB
+End Address: 0x6fda0000
+State: Committed
+Protect: Write Copy
+Type: Image
+Module Name: C:\Users\MaYu\anaconda3\envs\joyrl\Library\mingw-w64\bin\libstdc++-6.dll
+
+Base Address: 0x6fda0000
+Allocation Base: 0x6fc40000
+Region Size: 8 KB
+End Address: 0x6fda2000
+State: Committed
+Protect: Read Only
+Type: Image
+Module Name: C:\Users\MaYu\anaconda3\envs\joyrl\Library\mingw-w64\bin\libstdc++-6.dll
+
+Base Address: 0x6fda2000
+Allocation Base: 0
+Region Size: 264440 KB
+End Address: 0x7ffe0000
+State: Free
+Protect: No Access
+Module Name: C:\Users\MaYu\anaconda3\envs\joyrl\Library\mingw-w64\bin\libstdc++-6.dll
+
+Base Address: 0x7ffe0000
+Allocation Base: 0x7ffe0000
+Region Size: 4 KB
+End Address: 0x7ffe1000
+State: Committed
+Protect: Read Only
+Type: Private
+Module Name: C:\Users\MaYu\anaconda3\envs\joyrl\Library\mingw-w64\bin\libstdc++-6.dll
+
+Base Address: 0x7ffe1000
+Allocation Base: 0
+Region Size: 40 KB
+End Address: 0x7ffeb000
+State: Free
+Protect: No Access
+Module Name: C:\Users\MaYu\anaconda3\envs\joyrl\Library\mingw-w64\bin\libstdc++-6.dll
+
+Base Address: 0x7ffeb000
+Allocation Base: 0x7ffeb000
+Region Size: 4 KB
+End Address: 0x7ffec000
+State: Committed
+Protect: Read Only
+Type: Private
+Module Name: C:\Users\MaYu\anaconda3\envs\joyrl\Library\mingw-w64\bin\libstdc++-6.dll
+
+Base Address: 0x7ffec000
+Allocation Base: 0
+Region Size: 131026 GB
+End Address: 0x7ff4fde80000
+State: Free
+Protect: No Access
+Module Name: C:\Users\MaYu\anaconda3\envs\joyrl\Library\mingw-w64\bin\libstdc++-6.dll
+
+Base Address: 0x7ff4fde80000
+Allocation Base: 0x7ff4fde80000
+Region Size: 20 KB
+End Address: 0x7ff4fde85000
+State: Committed
+Protect: Read Only
+Type: Mapped
+Module Name: C:\Users\MaYu\anaconda3\envs\joyrl\Library\mingw-w64\bin\libstdc++-6.dll
+
+Base Address: 0x7ff4fde85000
+Allocation Base: 0x7ff4fde80000
+Region Size: 1004 KB
+End Address: 0x7ff4fdf80000
+State: Reserved
+Type: Mapped
+Module Name: C:\Users\MaYu\anaconda3\envs\joyrl\Library\mingw-w64\bin\libstdc++-6.dll
+
+Base Address: 0x7ff4fdf80000
+Allocation Base: 0x7ff4fdf80000
+Region Size: 4.00012 GB
+End Address: 0x7ff5fdfa0000
+State: Reserved
+Type: Private
+Module Name: C:\Users\MaYu\anaconda3\envs\joyrl\Library\mingw-w64\bin\libstdc++-6.dll
+
+Base Address: 0x7ff5fdfa0000
+Allocation Base: 0x7ff5fdfa0000
+Region Size: 32768 KB
+End Address: 0x7ff5fffa0000
+State: Reserved
+Type: Private
+Module Name: C:\Users\MaYu\anaconda3\envs\joyrl\Library\mingw-w64\bin\libstdc++-6.dll
+
+Base Address: 0x7ff5fffa0000
+Allocation Base: 0x7ff5fdfa0000
+Region Size: 4 KB
+End Address: 0x7ff5fffa1000
+State: Committed
+Protect: Read Write
+Type: Private
+Module Name: C:\Users\MaYu\anaconda3\envs\joyrl\Library\mingw-w64\bin\libstdc++-6.dll
+
+Base Address: 0x7ff5fffa1000
+Allocation Base: 0
+Region Size: 60 KB
+End Address: 0x7ff5fffb0000
+State: Free
+Protect: No Access
+Module Name: C:\Users\MaYu\anaconda3\envs\joyrl\Library\mingw-w64\bin\libstdc++-6.dll
+
+Base Address: 0x7ff5fffb0000
+Allocation Base: 0x7ff5fffb0000
+Region Size: 4 KB
+End Address: 0x7ff5fffb1000
+State: Committed
+Protect: Read Only
+Type: Mapped
+Module Name: C:\Users\MaYu\anaconda3\envs\joyrl\Library\mingw-w64\bin\libstdc++-6.dll
+
+Base Address: 0x7ff5fffb1000
+Allocation Base: 0
+Region Size: 60 KB
+End Address: 0x7ff5fffc0000
+State: Free
+Protect: No Access
+Module Name: C:\Users\MaYu\anaconda3\envs\joyrl\Library\mingw-w64\bin\libstdc++-6.dll
+
+Base Address: 0x7ff5fffc0000
+Allocation Base: 0x7ff5fffc0000
+Region Size: 204 KB
+End Address: 0x7ff5ffff3000
+State: Committed
+Protect: Read Only
+Type: Mapped
+Module Name: C:\Users\MaYu\anaconda3\envs\joyrl\Library\mingw-w64\bin\libstdc++-6.dll
+
+Base Address: 0x7ff5ffff3000
+Allocation Base: 0
+Region Size: 31.3103 GB
+End Address: 0x7ffdd3db0000
+State: Free
+Protect: No Access
+Module Name: C:\Users\MaYu\anaconda3\envs\joyrl\Library\mingw-w64\bin\libstdc++-6.dll
+
+Base Address: 0x7ffdd3db0000
+Allocation Base: 0x7ffdd3db0000
+Region Size: 4 KB
+End Address: 0x7ffdd3db1000
+State: Committed
+Protect: Read Only
+Type: Image
+Module Name: C:\Windows\System32\win32u.dll
+
+Base Address: 0x7ffdd3db1000
+Allocation Base: 0x7ffdd3db0000
+Region Size: 44 KB
+End Address: 0x7ffdd3dbc000
+State: Committed
+Protect: Execute Read
+Type: Image
+Module Name: C:\Windows\System32\win32u.dll
+
+Base Address: 0x7ffdd3dbc000
+Allocation Base: 0x7ffdd3db0000
+Region Size: 60 KB
+End Address: 0x7ffdd3dcb000
+State: Committed
+Protect: Read Only
+Type: Image
+Module Name: C:\Windows\System32\win32u.dll
+
+Base Address: 0x7ffdd3dcb000
+Allocation Base: 0x7ffdd3db0000
+Region Size: 4 KB
+End Address: 0x7ffdd3dcc000
+State: Committed
+Protect: Read Write
+Type: Image
+Module Name: C:\Windows\System32\win32u.dll
+
+Base Address: 0x7ffdd3dcc000
+Allocation Base: 0x7ffdd3db0000
+Region Size: 24 KB
+End Address: 0x7ffdd3dd2000
+State: Committed
+Protect: Read Only
+Type: Image
+Module Name: C:\Windows\System32\win32u.dll
+
+Base Address: 0x7ffdd3dd2000
+Allocation Base: 0
+Region Size: 504 KB
+End Address: 0x7ffdd3e50000
+State: Free
+Protect: No Access
+Module Name: C:\Windows\System32\win32u.dll
+
+Base Address: 0x7ffdd3e50000
+Allocation Base: 0x7ffdd3e50000
+Region Size: 4 KB
+End Address: 0x7ffdd3e51000
+State: Committed
+Protect: Read Only
+Type: Image
+Module Name: C:\Windows\System32\gdi32full.dll
+
+Base Address: 0x7ffdd3e51000
+Allocation Base: 0x7ffdd3e50000
+Region Size: 672 KB
+End Address: 0x7ffdd3ef9000
+State: Committed
+Protect: Execute Read
+Type: Image
+Module Name: C:\Windows\System32\gdi32full.dll
+
+Base Address: 0x7ffdd3ef9000
+Allocation Base: 0x7ffdd3e50000
+Region Size: 316 KB
+End Address: 0x7ffdd3f48000
+State: Committed
+Protect: Read Only
+Type: Image
+Module Name: C:\Windows\System32\gdi32full.dll
+
+Base Address: 0x7ffdd3f48000
+Allocation Base: 0x7ffdd3e50000
+Region Size: 20 KB
+End Address: 0x7ffdd3f4d000
+State: Committed
+Protect: Read Write
+Type: Image
+Module Name: C:\Windows\System32\gdi32full.dll
+
+Base Address: 0x7ffdd3f4d000
+Allocation Base: 0x7ffdd3e50000
+Region Size: 116 KB
+End Address: 0x7ffdd3f6a000
+State: Committed
+Protect: Read Only
+Type: Image
+Module Name: C:\Windows\System32\gdi32full.dll
+
+Base Address: 0x7ffdd3f6a000
+Allocation Base: 0
+Region Size: 600 KB
+End Address: 0x7ffdd4000000
+State: Free
+Protect: No Access
+Module Name: C:\Windows\System32\gdi32full.dll
+
+Base Address: 0x7ffdd4000000
+Allocation Base: 0x7ffdd4000000
+Region Size: 4 KB
+End Address: 0x7ffdd4001000
+State: Committed
+Protect: Read Only
+Type: Image
+Module Name: C:\Windows\System32\ucrtbase.dll
+
+Base Address: 0x7ffdd4001000
+Allocation Base: 0x7ffdd4000000
+Region Size: 720 KB
+End Address: 0x7ffdd40b5000
+State: Committed
+Protect: Execute Read
+Type: Image
+Module Name: C:\Windows\System32\ucrtbase.dll
+
+Base Address: 0x7ffdd40b5000
+Allocation Base: 0x7ffdd4000000
+Region Size: 232 KB
+End Address: 0x7ffdd40ef000
+State: Committed
+Protect: Read Only
+Type: Image
+Module Name: C:\Windows\System32\ucrtbase.dll
+
+Base Address: 0x7ffdd40ef000
+Allocation Base: 0x7ffdd4000000
+Region Size: 12 KB
+End Address: 0x7ffdd40f2000
+State: Committed
+Protect: Read Write
+Type: Image
+Module Name: C:\Windows\System32\ucrtbase.dll
+
+Base Address: 0x7ffdd40f2000
+Allocation Base: 0x7ffdd4000000
+Region Size: 56 KB
+End Address: 0x7ffdd4100000
+State: Committed
+Protect: Read Only
+Type: Image
+Module Name: C:\Windows\System32\ucrtbase.dll
+
+Base Address: 0x7ffdd4100000
+Allocation Base: 0x7ffdd4100000
+Region Size: 4 KB
+End Address: 0x7ffdd4101000
+State: Committed
+Protect: Read Only
+Type: Image
+Module Name: C:\Windows\System32\KERNELBASE.dll
+
+Base Address: 0x7ffdd4101000
+Allocation Base: 0x7ffdd4100000
+Region Size: 1228 KB
+End Address: 0x7ffdd4234000
+State: Committed
+Protect: Execute Read
+Type: Image
+Module Name: C:\Windows\System32\KERNELBASE.dll
+
+Base Address: 0x7ffdd4234000
+Allocation Base: 0x7ffdd4100000
+Region Size: 1544 KB
+End Address: 0x7ffdd43b6000
+State: Committed
+Protect: Read Only
+Type: Image
+Module Name: C:\Windows\System32\KERNELBASE.dll
+
+Base Address: 0x7ffdd43b6000
+Allocation Base: 0x7ffdd4100000
+Region Size: 20 KB
+End Address: 0x7ffdd43bb000
+State: Committed
+Protect: Read Write
+Type: Image
+Module Name: C:\Windows\System32\KERNELBASE.dll
+
+Base Address: 0x7ffdd43bb000
+Allocation Base: 0x7ffdd4100000
+Region Size: 236 KB
+End Address: 0x7ffdd43f6000
+State: Committed
+Protect: Read Only
+Type: Image
+Module Name: C:\Windows\System32\KERNELBASE.dll
+
+Base Address: 0x7ffdd43f6000
+Allocation Base: 0
+Region Size: 1448 KB
+End Address: 0x7ffdd4560000
+State: Free
+Protect: No Access
+Module Name: C:\Windows\System32\KERNELBASE.dll
+
+Base Address: 0x7ffdd4560000
+Allocation Base: 0x7ffdd4560000
+Region Size: 4 KB
+End Address: 0x7ffdd4561000
+State: Committed
+Protect: Read Only
+Type: Image
+Module Name: C:\Windows\System32\msvcp_win.dll
+
+Base Address: 0x7ffdd4561000
+Allocation Base: 0x7ffdd4560000
+Region Size: 336 KB
+End Address: 0x7ffdd45b5000
+State: Committed
+Protect: Execute Read
+Type: Image
+Module Name: C:\Windows\System32\msvcp_win.dll
+
+Base Address: 0x7ffdd45b5000
+Allocation Base: 0x7ffdd4560000
+Region Size: 240 KB
+End Address: 0x7ffdd45f1000
+State: Committed
+Protect: Read Only
+Type: Image
+Module Name: C:\Windows\System32\msvcp_win.dll
+
+Base Address: 0x7ffdd45f1000
+Allocation Base: 0x7ffdd4560000
+Region Size: 4 KB
+End Address: 0x7ffdd45f2000
+State: Committed
+Protect: Write Copy
+Type: Image
+Module Name: C:\Windows\System32\msvcp_win.dll
+
+Base Address: 0x7ffdd45f2000
+Allocation Base: 0x7ffdd4560000
+Region Size: 12 KB
+End Address: 0x7ffdd45f5000
+State: Committed
+Protect: Read Write
+Type: Image
+Module Name: C:\Windows\System32\msvcp_win.dll
+
+Base Address: 0x7ffdd45f5000
+Allocation Base: 0x7ffdd4560000
+Region Size: 32 KB
+End Address: 0x7ffdd45fd000
+State: Committed
+Protect: Read Only
+Type: Image
+Module Name: C:\Windows\System32\msvcp_win.dll
+
+Base Address: 0x7ffdd45fd000
+Allocation Base: 0
+Region Size: 1228 KB
+End Address: 0x7ffdd4730000
+State: Free
+Protect: No Access
+Module Name: C:\Windows\System32\msvcp_win.dll
+
+Base Address: 0x7ffdd4730000
+Allocation Base: 0x7ffdd4730000
+Region Size: 4 KB
+End Address: 0x7ffdd4731000
+State: Committed
+Protect: Read Only
+Type: Image
+Module Name: C:\Windows\System32\KERNEL32.DLL
+
+Base Address: 0x7ffdd4731000
+Allocation Base: 0x7ffdd4730000
+Region Size: 504 KB
+End Address: 0x7ffdd47af000
+State: Committed
+Protect: Execute Read
+Type: Image
+Module Name: C:\Windows\System32\KERNEL32.DLL
+
+Base Address: 0x7ffdd47af000
+Allocation Base: 0x7ffdd4730000
+Region Size: 204 KB
+End Address: 0x7ffdd47e2000
+State: Committed
+Protect: Read Only
+Type: Image
+Module Name: C:\Windows\System32\KERNEL32.DLL
+
+Base Address: 0x7ffdd47e2000
+Allocation Base: 0x7ffdd4730000
+Region Size: 4 KB
+End Address: 0x7ffdd47e3000
+State: Committed
+Protect: Read Write
+Type: Image
+Module Name: C:\Windows\System32\KERNEL32.DLL
+
+Base Address: 0x7ffdd47e3000
+Allocation Base: 0x7ffdd4730000
+Region Size: 4 KB
+End Address: 0x7ffdd47e4000
+State: Committed
+Protect: Write Copy
+Type: Image
+Module Name: C:\Windows\System32\KERNEL32.DLL
+
+Base Address: 0x7ffdd47e4000
+Allocation Base: 0x7ffdd4730000
+Region Size: 36 KB
+End Address: 0x7ffdd47ed000
+State: Committed
+Protect: Read Only
+Type: Image
+Module Name: C:\Windows\System32\KERNEL32.DLL
+
+Base Address: 0x7ffdd47ed000
+Allocation Base: 0
+Region Size: 16396 KB
+End Address: 0x7ffdd57f0000
+State: Free
+Protect: No Access
+Module Name: C:\Windows\System32\KERNEL32.DLL
+
+Base Address: 0x7ffdd57f0000
+Allocation Base: 0x7ffdd57f0000
+Region Size: 4 KB
+End Address: 0x7ffdd57f1000
+State: Committed
+Protect: Read Only
+Type: Image
+Module Name: C:\Windows\System32\PSAPI.DLL
+
+Base Address: 0x7ffdd57f1000
+Allocation Base: 0x7ffdd57f0000
+Region Size: 4 KB
+End Address: 0x7ffdd57f2000
+State: Committed
+Protect: Execute Read
+Type: Image
+Module Name: C:\Windows\System32\PSAPI.DLL
+
+Base Address: 0x7ffdd57f2000
+Allocation Base: 0x7ffdd57f0000
+Region Size: 8 KB
+End Address: 0x7ffdd57f4000
+State: Committed
+Protect: Read Only
+Type: Image
+Module Name: C:\Windows\System32\PSAPI.DLL
+
+Base Address: 0x7ffdd57f4000
+Allocation Base: 0x7ffdd57f0000
+Region Size: 4 KB
+End Address: 0x7ffdd57f5000
+State: Committed
+Protect: Read Write
+Type: Image
+Module Name: C:\Windows\System32\PSAPI.DLL
+
+Base Address: 0x7ffdd57f5000
+Allocation Base: 0x7ffdd57f0000
+Region Size: 12 KB
+End Address: 0x7ffdd57f8000
+State: Committed
+Protect: Read Only
+Type: Image
+Module Name: C:\Windows\System32\PSAPI.DLL
+
+Base Address: 0x7ffdd57f8000
+Allocation Base: 0
+Region Size: 32 KB
+End Address: 0x7ffdd5800000
+State: Free
+Protect: No Access
+Module Name: C:\Windows\System32\PSAPI.DLL
+
+Base Address: 0x7ffdd5800000
+Allocation Base: 0x7ffdd5800000
+Region Size: 4 KB
+End Address: 0x7ffdd5801000
+State: Committed
+Protect: Read Only
+Type: Image
+Module Name: C:\Windows\System32\IMM32.DLL
+
+Base Address: 0x7ffdd5801000
+Allocation Base: 0x7ffdd5800000
+Region Size: 120 KB
+End Address: 0x7ffdd581f000
+State: Committed
+Protect: Execute Read
+Type: Image
+Module Name: C:\Windows\System32\IMM32.DLL
+
+Base Address: 0x7ffdd581f000
+Allocation Base: 0x7ffdd5800000
+Region Size: 28 KB
+End Address: 0x7ffdd5826000
+State: Committed
+Protect: Read Only
+Type: Image
+Module Name: C:\Windows\System32\IMM32.DLL
+
+Base Address: 0x7ffdd5826000
+Allocation Base: 0x7ffdd5800000
+Region Size: 4 KB
+End Address: 0x7ffdd5827000
+State: Committed
+Protect: Read Write
+Type: Image
+Module Name: C:\Windows\System32\IMM32.DLL
+
+Base Address: 0x7ffdd5827000
+Allocation Base: 0x7ffdd5800000
+Region Size: 36 KB
+End Address: 0x7ffdd5830000
+State: Committed
+Protect: Read Only
+Type: Image
+Module Name: C:\Windows\System32\IMM32.DLL
+
+Base Address: 0x7ffdd5830000
+Allocation Base: 0
+Region Size: 8640 KB
+End Address: 0x7ffdd60a0000
+State: Free
+Protect: No Access
+Module Name: C:\Windows\System32\IMM32.DLL
+
+Base Address: 0x7ffdd60a0000
+Allocation Base: 0x7ffdd60a0000
+Region Size: 4 KB
+End Address: 0x7ffdd60a1000
+State: Committed
+Protect: Read Only
+Type: Image
+Module Name: C:\Windows\System32\msvcrt.dll
+
+Base Address: 0x7ffdd60a1000
+Allocation Base: 0x7ffdd60a0000
+Region Size: 468 KB
+End Address: 0x7ffdd6116000
+State: Committed
+Protect: Execute Read
+Type: Image
+Module Name: C:\Windows\System32\msvcrt.dll
+
+Base Address: 0x7ffdd6116000
+Allocation Base: 0x7ffdd60a0000
+Region Size: 100 KB
+End Address: 0x7ffdd612f000
+State: Committed
+Protect: Read Only
+Type: Image
+Module Name: C:\Windows\System32\msvcrt.dll
+
+Base Address: 0x7ffdd612f000
+Allocation Base: 0x7ffdd60a0000
+Region Size: 8 KB
+End Address: 0x7ffdd6131000
+State: Committed
+Protect: Read Write
+Type: Image
+Module Name: C:\Windows\System32\msvcrt.dll
+
+Base Address: 0x7ffdd6131000
+Allocation Base: 0x7ffdd60a0000
+Region Size: 12 KB
+End Address: 0x7ffdd6134000
+State: Committed
+Protect: Write Copy
+Type: Image
+Module Name: C:\Windows\System32\msvcrt.dll
+
+Base Address: 0x7ffdd6134000
+Allocation Base: 0x7ffdd60a0000
+Region Size: 8 KB
+End Address: 0x7ffdd6136000
+State: Committed
+Protect: Read Write
+Type: Image
+Module Name: C:\Windows\System32\msvcrt.dll
+
+Base Address: 0x7ffdd6136000
+Allocation Base: 0x7ffdd60a0000
+Region Size: 4 KB
+End Address: 0x7ffdd6137000
+State: Committed
+Protect: Write Copy
+Type: Image
+Module Name: C:\Windows\System32\msvcrt.dll
+
+Base Address: 0x7ffdd6137000
+Allocation Base: 0x7ffdd60a0000
+Region Size: 28 KB
+End Address: 0x7ffdd613e000
+State: Committed
+Protect: Read Only
+Type: Image
+Module Name: C:\Windows\System32\msvcrt.dll
+
+Base Address: 0x7ffdd613e000
+Allocation Base: 0
+Region Size: 1736 KB
+End Address: 0x7ffdd62f0000
+State: Free
+Protect: No Access
+Module Name: C:\Windows\System32\msvcrt.dll
+
+Base Address: 0x7ffdd62f0000
+Allocation Base: 0x7ffdd62f0000
+Region Size: 4 KB
+End Address: 0x7ffdd62f1000
+State: Committed
+Protect: Read Only
+Type: Image
+Module Name: C:\Windows\System32\USER32.dll
+
+Base Address: 0x7ffdd62f1000
+Allocation Base: 0x7ffdd62f0000
+Region Size: 572 KB
+End Address: 0x7ffdd6380000
+State: Committed
+Protect: Execute Read
+Type: Image
+Module Name: C:\Windows\System32\USER32.dll
+
+Base Address: 0x7ffdd6380000
+Allocation Base: 0x7ffdd62f0000
+Region Size: 132 KB
+End Address: 0x7ffdd63a1000
+State: Committed
+Protect: Read Only
+Type: Image
+Module Name: C:\Windows\System32\USER32.dll
+
+Base Address: 0x7ffdd63a1000
+Allocation Base: 0x7ffdd62f0000
+Region Size: 8 KB
+End Address: 0x7ffdd63a3000
+State: Committed
+Protect: Read Write
+Type: Image
+Module Name: C:\Windows\System32\USER32.dll
+
+Base Address: 0x7ffdd63a3000
+Allocation Base: 0x7ffdd62f0000
+Region Size: 940 KB
+End Address: 0x7ffdd648e000
+State: Committed
+Protect: Read Only
+Type: Image
+Module Name: C:\Windows\System32\USER32.dll
+
+Base Address: 0x7ffdd648e000
+Allocation Base: 0
+Region Size: 840 KB
+End Address: 0x7ffdd6560000
+State: Free
+Protect: No Access
+Module Name: C:\Windows\System32\USER32.dll
+
+Base Address: 0x7ffdd6560000
+Allocation Base: 0x7ffdd6560000
+Region Size: 4 KB
+End Address: 0x7ffdd6561000
+State: Committed
+Protect: Read Only
+Type: Image
+Module Name: C:\Windows\System32\GDI32.dll
+
+Base Address: 0x7ffdd6561000
+Allocation Base: 0x7ffdd6560000
+Region Size: 64 KB
+End Address: 0x7ffdd6571000
+State: Committed
+Protect: Execute Read
+Type: Image
+Module Name: C:\Windows\System32\GDI32.dll
+
+Base Address: 0x7ffdd6571000
+Allocation Base: 0x7ffdd6560000
+Region Size: 80 KB
+End Address: 0x7ffdd6585000
+State: Committed
+Protect: Read Only
+Type: Image
+Module Name: C:\Windows\System32\GDI32.dll
+
+Base Address: 0x7ffdd6585000
+Allocation Base: 0x7ffdd6560000
+Region Size: 4 KB
+End Address: 0x7ffdd6586000
+State: Committed
+Protect: Read Write
+Type: Image
+Module Name: C:\Windows\System32\GDI32.dll
+
+Base Address: 0x7ffdd6586000
+Allocation Base: 0x7ffdd6560000
+Region Size: 24 KB
+End Address: 0x7ffdd658c000
+State: Committed
+Protect: Read Only
+Type: Image
+Module Name: C:\Windows\System32\GDI32.dll
+
+Base Address: 0x7ffdd658c000
+Allocation Base: 0
+Region Size: 1296 KB
+End Address: 0x7ffdd66d0000
+State: Free
+Protect: No Access
+Module Name: C:\Windows\System32\GDI32.dll
+
+Base Address: 0x7ffdd66d0000
+Allocation Base: 0x7ffdd66d0000
+Region Size: 4 KB
+End Address: 0x7ffdd66d1000
+State: Committed
+Protect: Read Only
+Type: Image
+Module Name: C:\Windows\SYSTEM32\ntdll.dll
+
+Base Address: 0x7ffdd66d1000
+Allocation Base: 0x7ffdd66d0000
+Region Size: 1132 KB
+End Address: 0x7ffdd67ec000
+State: Committed
+Protect: Execute Read
+Type: Image
+Module Name: C:\Windows\SYSTEM32\ntdll.dll
+
+Base Address: 0x7ffdd67ec000
+Allocation Base: 0x7ffdd66d0000
+Region Size: 292 KB
+End Address: 0x7ffdd6835000
+State: Committed
+Protect: Read Only
+Type: Image
+Module Name: C:\Windows\SYSTEM32\ntdll.dll
+
+Base Address: 0x7ffdd6835000
+Allocation Base: 0x7ffdd66d0000
+Region Size: 4 KB
+End Address: 0x7ffdd6836000
+State: Committed
+Protect: Read Write
+Type: Image
+Module Name: C:\Windows\SYSTEM32\ntdll.dll
+
+Base Address: 0x7ffdd6836000
+Allocation Base: 0x7ffdd66d0000
+Region Size: 8 KB
+End Address: 0x7ffdd6838000
+State: Committed
+Protect: Write Copy
+Type: Image
+Module Name: C:\Windows\SYSTEM32\ntdll.dll
+
+Base Address: 0x7ffdd6838000
+Allocation Base: 0x7ffdd66d0000
+Region Size: 36 KB
+End Address: 0x7ffdd6841000
+State: Committed
+Protect: Read Write
+Type: Image
+Module Name: C:\Windows\SYSTEM32\ntdll.dll
+
+Base Address: 0x7ffdd6841000
+Allocation Base: 0x7ffdd66d0000
+Region Size: 536 KB
+End Address: 0x7ffdd68c7000
+State: Committed
+Protect: Read Only
+Type: Image
+Module Name: C:\Windows\SYSTEM32\ntdll.dll
+
+Base Address: 0x7ffdd68c7000
+Allocation Base: 0
+Region Size: 8.64762 GB
+End Address: 0x7fffffff0000
+State: Free
+Protect: No Access
+Module Name: C:\Windows\SYSTEM32\ntdll.dll
+
+
+----------------------------------------
+1GB of virtual memory allocated， Region information:
+
+Base Address: 0x26a0000
+Allocation Base: 0x26a0000
+Region Size: 1 GB
+End Address: 0x426a0000
+State: Committed
+Protect: Read Write
+Type: Private
+Module Name: 
+
+Added Virtual Page File: 1.00363 GB
+
+1MB cleared to 0

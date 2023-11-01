@@ -1,0 +1,119 @@
+\documentclass{article}
+\usepackage{ctex} % 使用 ctex 宏包以支持中文
+\usepackage{amsmath}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+
+\begin{document}
+
+
+
+
+
+\begin{algorithm}
+\caption{深度优先搜索（使用栈）}
+\label{alg:dfs-stack}
+\begin{algorithmic}
+\State 初始化栈 $s$
+\For{$i=0$ to $n-1$}
+    \If{下一步可走且该点未被标记或排除}
+        \State 标记访问
+        \State $s$.push($i$) \Comment{入栈}
+    \EndIf
+\EndFor
+\While{$\neg s$.empty()} \Comment{如果栈非空}
+    \State 访问$s$.top() \Comment{栈顶}
+    \State 执行相应操作
+    \State $s$.pop() \Comment{出栈}
+    \For{$i=1$ to $n$}
+        \If{栈顶的下一步可走且该点未被标记}
+            \State 标记访问
+            \State $s$.push($i$) \Comment{入栈}
+        \EndIf
+    \EndFor
+\EndWhile
+\end{algorithmic}
+\end{algorithm}
+
+
+\begin{algorithm}
+\caption{广度优先搜索}
+\label{alg:bfs}
+\begin{algorithmic}
+\State 创建队列 $qu$
+\State $qu$.push(起始状态入队)
+\While{$\neg qu$.empty()} \Comment{当队列非空}
+    \If{当前状态$x$方向可走}
+        \State $qu$.push(当前状态+$x$) \Comment{该状态入队}
+    \EndIf
+    \If{当前状态$y$方向可走}
+        \State $qu$.push(当前状态+$y$) \Comment{该状态入队}
+    \EndIf
+    \State $\ldots\ldots$ \Comment{其他方向可走的情况}
+    \State 处理($qu$.top())
+    \State 相应操作
+    \State $qu$.pop() \Comment{队首弹出队}
+\EndWhile
+\end{algorithmic}
+\end{algorithm}
+
+
+\begin{algorithm}
+\caption{寻找欧拉回路}
+\label{alg:euler-circuit}
+\begin{algorithmic}
+\State \textbf{全局变量} circuit 是一个数组
+\State \textbf{全局变量} circuitpos = 0
+\Function{find\_circuit}{node 1}
+    \State \textbf{局部变量} nextnode 和 visited 是局部数组
+    \State \Comment{路径将以倒序方式找到}
+\EndFunction
+
+\Function{find\_circuit}{node i}
+    \If{node i 没有邻居}
+        \State circuit(circuitpos) = node i
+        \State circuitpos = circuitpos + 1
+    \Else
+        \While{node i 有邻居}
+            \State 选择一个随机的邻居节点 j 作为 node i 的邻居
+            \State 删除边 (node j, node i)
+            \State \Call{find\_circuit}{node j}
+            \State circuit(circuitpos) = node i
+            \State circuitpos = circuitpos + 1
+        \EndWhile
+    \EndIf
+\EndFunction
+\end{algorithmic}
+\end{algorithm}
+
+
+\begin{algorithm}
+\caption{A*搜索算法}
+\begin{algorithmic}
+\State 初始化 $open\_set$ 和 $close\_set$
+\State 将起点加入 $open\_set$ 中，并设置优先级为0（优先级最高）
+\While{$open\_set$ 不为空}
+    \State 从 $open\_set$ 中选取优先级最高的节点 $n$
+    \If{$n$ 为终点}
+        \State 从终点开始逐步追踪parent节点，一直达到起点
+        \State 返回找到的结果路径，算法结束
+    \Else
+        \State 将节点 $n$ 从 $open\_set$ 中删除，并加入 $close\_set$ 中
+        \For{每个邻近节点 $m$}
+            \If{$m$ 在 $close\_set$ 中}
+                \State 跳过，选取下一个邻近节点
+            \ElsIf{$m$ 不在 $open\_set$ 中}
+                \State 设置节点 $m$ 的parent为节点 $n$
+                \State 计算节点 $m$ 的优先级
+                \State 将节点 $m$ 加入 $open\_set$ 中
+            \EndIf
+        \EndFor
+    \EndIf
+\EndWhile
+\end{algorithmic}
+\end{algorithm}
+
+\end{document}
+
+

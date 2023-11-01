@@ -1,0 +1,2 @@
+可以在https://github.com/Embedding/Chinese-Word-Vectors中自行选择使用
+

@@ -1,6 +1,4 @@
 #无用的word和pdf
-*.doc
-*.docx
 *.pdf
 
 # Prerequisites
@@ -42,6 +40,23 @@
 *test*.*
 *output*.*
 *example*.*
-
+*.tmp
+*temp*
 #文件夹
 easy-rl
+IntelligentSystem
+*.zip
+*.egg
+AIsys/跨越险阻仿真赛软件
+*.pyc
+*.rar
+*.7z
+ParrallelPrograming/3d
+*.ppt
+*.pptx
+*.vscode
+NLP/HW1/sgns.target.word-word.dynwin5.thr10.neg5.dim300.iter5
+RL/RLexample
+*result*.*
+*.pkl
+RL/rainbow-is-all-you-need

@@ -1,0 +1,5 @@
+opencv-python==4.4.0.40
+matplotlib==3.3.4
+scipy==1.5.4
+numpy==1.19.5
+#https://pypi.tuna.tsinghua.edu.cn/simple 

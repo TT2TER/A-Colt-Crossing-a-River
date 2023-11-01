@@ -1,0 +1,167 @@
+episode:5/1000，rewards:19.00，eval_rewards:21.45，our_best_rewards:21.45，updated!
+episode:10/1000，rewards:16.00，eval_rewards:23.35，our_best_rewards:23.35，updated!
+episode:15/1000，rewards:12.00，eval_rewards:20.55，our_best_rewards:23.35，don't need to update.
+episode:20/1000，rewards:36.00，eval_rewards:39.60，our_best_rewards:39.60，updated!
+episode:25/1000，rewards:41.00，eval_rewards:41.70，our_best_rewards:41.70，updated!
+episode:30/1000，rewards:91.00，eval_rewards:53.40，our_best_rewards:53.40，updated!
+episode:35/1000，rewards:123.00，eval_rewards:70.40，our_best_rewards:70.40，updated!
+episode:40/1000，rewards:41.00，eval_rewards:69.40，our_best_rewards:70.40，don't need to update.
+episode:45/1000，rewards:73.00，eval_rewards:67.05，our_best_rewards:70.40，don't need to update.
+episode:50/1000，rewards:45.00，eval_rewards:106.80，our_best_rewards:106.80，updated!
+episode:55/1000，rewards:109.00，eval_rewards:96.05，our_best_rewards:106.80，don't need to update.
+episode:60/1000，rewards:108.00，eval_rewards:130.80，our_best_rewards:130.80，updated!
+episode:65/1000，rewards:64.00，eval_rewards:129.65，our_best_rewards:130.80，don't need to update.
+episode:70/1000，rewards:254.00，eval_rewards:173.80，our_best_rewards:173.80，updated!
+episode:75/1000，rewards:197.00，eval_rewards:175.60，our_best_rewards:175.60，updated!
+episode:80/1000，rewards:345.00，eval_rewards:279.95，our_best_rewards:279.95，updated!
+episode:85/1000，rewards:214.00，eval_rewards:226.10，our_best_rewards:279.95，don't need to update.
+episode:90/1000，rewards:150.00，eval_rewards:147.50，our_best_rewards:279.95，don't need to update.
+episode:95/1000，rewards:91.00，eval_rewards:135.95，our_best_rewards:279.95，don't need to update.
+episode:100/1000，rewards:143.00，eval_rewards:167.85，our_best_rewards:279.95，don't need to update.
+episode:105/1000，rewards:137.00，eval_rewards:312.00，our_best_rewards:312.00，updated!
+episode:110/1000，rewards:298.00，eval_rewards:283.55，our_best_rewards:312.00，don't need to update.
+episode:115/1000，rewards:208.00，eval_rewards:212.70，our_best_rewards:312.00，don't need to update.
+episode:120/1000，rewards:294.00，eval_rewards:232.65，our_best_rewards:312.00，don't need to update.
+episode:125/1000，rewards:108.00，eval_rewards:191.70，our_best_rewards:312.00，don't need to update.
+episode:130/1000，rewards:233.00，eval_rewards:127.50，our_best_rewards:312.00，don't need to update.
+episode:135/1000，rewards:92.00，eval_rewards:138.20，our_best_rewards:312.00，don't need to update.
+episode:140/1000，rewards:93.00，eval_rewards:154.75，our_best_rewards:312.00，don't need to update.
+episode:145/1000，rewards:214.00，eval_rewards:207.25，our_best_rewards:312.00，don't need to update.
+episode:150/1000，rewards:204.00，eval_rewards:140.50，our_best_rewards:312.00，don't need to update.
+episode:155/1000，rewards:187.00，eval_rewards:125.85，our_best_rewards:312.00，don't need to update.
+episode:160/1000，rewards:317.00，eval_rewards:209.70，our_best_rewards:312.00，don't need to update.
+episode:165/1000，rewards:265.00，eval_rewards:309.10，our_best_rewards:312.00，don't need to update.
+episode:170/1000，rewards:148.00，eval_rewards:119.60，our_best_rewards:312.00，don't need to update.
+episode:175/1000，rewards:92.00，eval_rewards:111.70，our_best_rewards:312.00，don't need to update.
+episode:180/1000，rewards:86.00，eval_rewards:125.05，our_best_rewards:312.00，don't need to update.
+episode:185/1000，rewards:97.00，eval_rewards:106.25，our_best_rewards:312.00，don't need to update.
+episode:190/1000，rewards:93.00，eval_rewards:121.45，our_best_rewards:312.00，don't need to update.
+episode:195/1000，rewards:107.00，eval_rewards:103.15，our_best_rewards:312.00，don't need to update.
+episode:200/1000，rewards:106.00，eval_rewards:100.05，our_best_rewards:312.00，don't need to update.
+episode:205/1000，rewards:81.00，eval_rewards:86.10，our_best_rewards:312.00，don't need to update.
+episode:210/1000，rewards:78.00，eval_rewards:79.40，our_best_rewards:312.00，don't need to update.
+episode:215/1000，rewards:73.00，eval_rewards:75.75，our_best_rewards:312.00，don't need to update.
+episode:220/1000，rewards:106.00，eval_rewards:102.25，our_best_rewards:312.00，don't need to update.
+episode:225/1000，rewards:100.00，eval_rewards:86.35，our_best_rewards:312.00，don't need to update.
+episode:230/1000，rewards:84.00，eval_rewards:78.60，our_best_rewards:312.00，don't need to update.
+episode:235/1000，rewards:69.00，eval_rewards:70.25，our_best_rewards:312.00，don't need to update.
+episode:240/1000，rewards:72.00，eval_rewards:69.85，our_best_rewards:312.00，don't need to update.
+episode:245/1000，rewards:142.00，eval_rewards:76.15，our_best_rewards:312.00，don't need to update.
+episode:250/1000，rewards:52.00，eval_rewards:93.95，our_best_rewards:312.00，don't need to update.
+episode:255/1000，rewards:105.00，eval_rewards:69.65，our_best_rewards:312.00，don't need to update.
+episode:260/1000，rewards:52.00，eval_rewards:72.35，our_best_rewards:312.00，don't need to update.
+episode:265/1000，rewards:51.00，eval_rewards:77.45，our_best_rewards:312.00，don't need to update.
+episode:270/1000，rewards:95.00，eval_rewards:83.90，our_best_rewards:312.00，don't need to update.
+episode:275/1000，rewards:42.00，eval_rewards:83.90，our_best_rewards:312.00，don't need to update.
+episode:280/1000，rewards:129.00，eval_rewards:113.60，our_best_rewards:312.00，don't need to update.
+episode:285/1000，rewards:77.00，eval_rewards:121.45，our_best_rewards:312.00，don't need to update.
+episode:290/1000，rewards:76.00，eval_rewards:98.70，our_best_rewards:312.00，don't need to update.
+episode:295/1000，rewards:99.00，eval_rewards:92.45，our_best_rewards:312.00，don't need to update.
+episode:300/1000，rewards:138.00，eval_rewards:104.15，our_best_rewards:312.00，don't need to update.
+episode:305/1000，rewards:119.00，eval_rewards:104.65，our_best_rewards:312.00，don't need to update.
+episode:310/1000，rewards:100.00，eval_rewards:98.45，our_best_rewards:312.00，don't need to update.
+episode:315/1000，rewards:66.00，eval_rewards:89.75，our_best_rewards:312.00，don't need to update.
+episode:320/1000，rewards:73.00，eval_rewards:87.90，our_best_rewards:312.00，don't need to update.
+episode:325/1000，rewards:74.00，eval_rewards:85.00，our_best_rewards:312.00，don't need to update.
+episode:330/1000，rewards:89.00，eval_rewards:69.95，our_best_rewards:312.00，don't need to update.
+episode:335/1000，rewards:83.00，eval_rewards:73.90，our_best_rewards:312.00，don't need to update.
+episode:340/1000，rewards:81.00，eval_rewards:99.65，our_best_rewards:312.00，don't need to update.
+episode:345/1000，rewards:71.00，eval_rewards:103.55，our_best_rewards:312.00，don't need to update.
+episode:350/1000，rewards:85.00，eval_rewards:93.00，our_best_rewards:312.00，don't need to update.
+episode:355/1000，rewards:75.00，eval_rewards:60.00，our_best_rewards:312.00，don't need to update.
+episode:360/1000，rewards:65.00，eval_rewards:62.65，our_best_rewards:312.00，don't need to update.
+episode:365/1000，rewards:51.00，eval_rewards:61.10，our_best_rewards:312.00，don't need to update.
+episode:370/1000，rewards:41.00，eval_rewards:72.40，our_best_rewards:312.00，don't need to update.
+episode:375/1000，rewards:34.00，eval_rewards:50.80，our_best_rewards:312.00，don't need to update.
+episode:380/1000，rewards:33.00，eval_rewards:65.05，our_best_rewards:312.00，don't need to update.
+episode:385/1000，rewards:70.00，eval_rewards:74.10，our_best_rewards:312.00，don't need to update.
+episode:390/1000，rewards:75.00，eval_rewards:73.45，our_best_rewards:312.00，don't need to update.
+episode:395/1000，rewards:87.00，eval_rewards:80.55，our_best_rewards:312.00，don't need to update.
+episode:400/1000，rewards:113.00，eval_rewards:108.25，our_best_rewards:312.00，don't need to update.
+episode:405/1000，rewards:86.00，eval_rewards:82.70，our_best_rewards:312.00，don't need to update.
+episode:410/1000，rewards:205.00，eval_rewards:124.60，our_best_rewards:312.00，don't need to update.
+episode:415/1000，rewards:166.00，eval_rewards:242.45，our_best_rewards:312.00，don't need to update.
+episode:420/1000，rewards:366.00，eval_rewards:321.00，our_best_rewards:321.00，updated!
+episode:425/1000，rewards:65.00，eval_rewards:206.10，our_best_rewards:321.00，don't need to update.
+episode:430/1000，rewards:111.00，eval_rewards:149.50，our_best_rewards:321.00，don't need to update.
+episode:435/1000，rewards:60.00，eval_rewards:146.50，our_best_rewards:321.00，don't need to update.
+episode:440/1000，rewards:368.00，eval_rewards:330.40，our_best_rewards:330.40，updated!
+episode:445/1000，rewards:410.00，eval_rewards:353.35，our_best_rewards:353.35，updated!
+episode:450/1000，rewards:82.00，eval_rewards:153.85，our_best_rewards:353.35，don't need to update.
+episode:455/1000，rewards:79.00，eval_rewards:195.05，our_best_rewards:353.35，don't need to update.
+episode:460/1000，rewards:161.00，eval_rewards:144.05，our_best_rewards:353.35，don't need to update.
+episode:465/1000，rewards:95.00，eval_rewards:124.10，our_best_rewards:353.35，don't need to update.
+episode:470/1000，rewards:160.00，eval_rewards:88.85，our_best_rewards:353.35，don't need to update.
+episode:475/1000，rewards:213.00，eval_rewards:212.00，our_best_rewards:353.35，don't need to update.
+episode:480/1000，rewards:125.00，eval_rewards:180.80，our_best_rewards:353.35，don't need to update.
+episode:485/1000，rewards:229.00，eval_rewards:341.60，our_best_rewards:353.35，don't need to update.
+episode:490/1000，rewards:500.00，eval_rewards:426.00，our_best_rewards:426.00，updated!
+episode:495/1000，rewards:500.00，eval_rewards:291.75，our_best_rewards:426.00，don't need to update.
+episode:500/1000，rewards:500.00，eval_rewards:431.40，our_best_rewards:431.40，updated!
+episode:505/1000，rewards:152.00，eval_rewards:304.25，our_best_rewards:431.40，don't need to update.
+episode:510/1000，rewards:160.00，eval_rewards:101.65，our_best_rewards:431.40，don't need to update.
+episode:515/1000，rewards:73.00，eval_rewards:98.95，our_best_rewards:431.40，don't need to update.
+episode:520/1000，rewards:74.00，eval_rewards:105.30，our_best_rewards:431.40，don't need to update.
+episode:525/1000，rewards:84.00，eval_rewards:82.80，our_best_rewards:431.40，don't need to update.
+episode:530/1000，rewards:62.00，eval_rewards:75.05，our_best_rewards:431.40，don't need to update.
+episode:535/1000，rewards:87.00，eval_rewards:73.35，our_best_rewards:431.40，don't need to update.
+episode:540/1000，rewards:69.00，eval_rewards:71.75，our_best_rewards:431.40，don't need to update.
+episode:545/1000，rewards:33.00，eval_rewards:57.60，our_best_rewards:431.40，don't need to update.
+episode:550/1000，rewards:57.00，eval_rewards:57.35，our_best_rewards:431.40，don't need to update.
+episode:555/1000，rewards:59.00，eval_rewards:64.90，our_best_rewards:431.40，don't need to update.
+episode:560/1000，rewards:62.00，eval_rewards:70.65，our_best_rewards:431.40，don't need to update.
+episode:565/1000，rewards:69.00，eval_rewards:75.70，our_best_rewards:431.40，don't need to update.
+episode:570/1000，rewards:135.00，eval_rewards:72.25，our_best_rewards:431.40，don't need to update.
+episode:575/1000，rewards:72.00，eval_rewards:60.15，our_best_rewards:431.40，don't need to update.
+episode:580/1000，rewards:56.00，eval_rewards:68.10，our_best_rewards:431.40，don't need to update.
+episode:585/1000，rewards:80.00，eval_rewards:75.65，our_best_rewards:431.40，don't need to update.
+episode:590/1000，rewards:48.00，eval_rewards:91.55，our_best_rewards:431.40，don't need to update.
+episode:595/1000，rewards:56.00，eval_rewards:59.20，our_best_rewards:431.40，don't need to update.
+episode:600/1000，rewards:46.00，eval_rewards:77.35，our_best_rewards:431.40，don't need to update.
+episode:605/1000，rewards:69.00，eval_rewards:64.25，our_best_rewards:431.40，don't need to update.
+episode:610/1000，rewards:49.00，eval_rewards:69.85，our_best_rewards:431.40，don't need to update.
+episode:615/1000，rewards:48.00，eval_rewards:55.15，our_best_rewards:431.40，don't need to update.
+episode:620/1000，rewards:50.00，eval_rewards:51.75，our_best_rewards:431.40，don't need to update.
+episode:625/1000，rewards:41.00，eval_rewards:65.35，our_best_rewards:431.40，don't need to update.
+episode:630/1000，rewards:54.00，eval_rewards:52.05，our_best_rewards:431.40，don't need to update.
+episode:635/1000，rewards:46.00，eval_rewards:46.95，our_best_rewards:431.40，don't need to update.
+episode:640/1000，rewards:75.00，eval_rewards:47.15，our_best_rewards:431.40，don't need to update.
+episode:645/1000，rewards:77.00，eval_rewards:66.10，our_best_rewards:431.40，don't need to update.
+episode:650/1000，rewards:50.00，eval_rewards:69.25，our_best_rewards:431.40，don't need to update.
+episode:655/1000，rewards:51.00，eval_rewards:55.60，our_best_rewards:431.40，don't need to update.
+episode:660/1000，rewards:90.00，eval_rewards:53.15，our_best_rewards:431.40，don't need to update.
+episode:665/1000，rewards:51.00，eval_rewards:51.25，our_best_rewards:431.40，don't need to update.
+episode:670/1000，rewards:63.00，eval_rewards:55.05，our_best_rewards:431.40，don't need to update.
+episode:675/1000，rewards:48.00，eval_rewards:75.45，our_best_rewards:431.40，don't need to update.
+episode:680/1000，rewards:124.00，eval_rewards:88.45，our_best_rewards:431.40，don't need to update.
+episode:685/1000，rewards:76.00，eval_rewards:222.30，our_best_rewards:431.40，don't need to update.
+episode:690/1000，rewards:51.00，eval_rewards:116.05，our_best_rewards:431.40，don't need to update.
+episode:695/1000，rewards:49.00，eval_rewards:61.75，our_best_rewards:431.40，don't need to update.
+episode:700/1000，rewards:57.00，eval_rewards:52.35，our_best_rewards:431.40，don't need to update.
+episode:705/1000，rewards:46.00，eval_rewards:52.45，our_best_rewards:431.40，don't need to update.
+episode:710/1000，rewards:62.00，eval_rewards:51.40，our_best_rewards:431.40，don't need to update.
+episode:715/1000，rewards:75.00，eval_rewards:39.70，our_best_rewards:431.40，don't need to update.
+episode:720/1000，rewards:26.00，eval_rewards:34.70，our_best_rewards:431.40，don't need to update.
+episode:725/1000，rewards:47.00，eval_rewards:38.40，our_best_rewards:431.40，don't need to update.
+episode:730/1000，rewards:47.00，eval_rewards:41.15，our_best_rewards:431.40，don't need to update.
+episode:735/1000，rewards:84.00，eval_rewards:64.75，our_best_rewards:431.40，don't need to update.
+episode:740/1000，rewards:97.00，eval_rewards:88.95，our_best_rewards:431.40，don't need to update.
+episode:745/1000，rewards:85.00，eval_rewards:76.35，our_best_rewards:431.40，don't need to update.
+episode:750/1000，rewards:59.00，eval_rewards:95.75，our_best_rewards:431.40，don't need to update.
+episode:755/1000，rewards:181.00，eval_rewards:282.95，our_best_rewards:431.40，don't need to update.
+episode:760/1000，rewards:500.00，eval_rewards:494.90，our_best_rewards:494.90，updated!
+episode:765/1000，rewards:500.00，eval_rewards:500.00，our_best_rewards:500.00，updated!
+Environment solved in 764 episode!	Average Score:500.00
+train over. best_reward:500.00
+episode:1/10，rewards:500.00
+episode:2/10，rewards:500.00
+episode:3/10，rewards:500.00
+episode:4/10，rewards:500.00
+episode:5/10，rewards:500.00
+episode:6/10，rewards:500.00
+episode:7/10，rewards:500.00
+episode:8/10，rewards:500.00
+episode:9/10，rewards:228.00
+episode:10/10，rewards:473.00
+test over.
+reward: 500
