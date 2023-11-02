@@ -1,0 +1,8 @@
+.
+├── demo.exe
+├── hello_link.py -> hello.py
+├── hello.py
+└── subdir
+    └── main.o
+
+1 directory, 4 files
