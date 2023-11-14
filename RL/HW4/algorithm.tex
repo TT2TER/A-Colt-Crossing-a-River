@@ -1,0 +1,40 @@
+\documentclass{article}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{amsmath} % 添加数学符号支持
+\usepackage{ctex} % 使用 ctex 宏包以支持中文
+
+\begin{document}
+
+\begin{algorithm}
+\caption{深度Q学习与经验回放}
+\label{alg:deep-q-learning}
+\begin{algorithmic}
+\State \textbf{Algorithm 1:} 深度Q学习与经验回放
+\State 初始化回放记忆 $D$，容量为 $N$
+\State 初始化动作值函数 $Q$，权重为随机权重 $\theta$
+\State 初始化目标动作值函数 $Q^-$，权重为 $\theta^- = \theta$
+\State $t \gets 0$
+\For{每一轮 episode $= 1, M$}
+    \State 初始化序列 $s_1 = [x]$ 和预处理序列 $p_1 = \phi(s_1)$
+    \For{每一时间步 $t = 1, T$}
+        \State 以概率 $\epsilon$ 选择一个随机动作 $a_t$，否则选择 $a_t = \arg\max_{a} Q(s_t, a; \theta)$
+        \State 执行动作 $a_t$ ，观察奖励 $r_t$ 和下一个状态 $s_{t+1}$, 以及$done$标志
+        \State 存储转换 $(s_t, a_t, r_t, s_{t+1},done)$ 到回放记忆 $D$
+        \State 从 $D$ 中采样随机小批量的转换 $(s_j, a_j, r_j, s_{j+1}, done)$
+        \If{在第 $j$ 步 episode 终止}
+            \State $y_j = r_j$
+        \Else
+            \State $y_j = r_j + \gamma \max_{a'} Q^-(s_{j+1}, a'; \theta^-)$
+        \EndIf
+        \State 执行一步梯度下降，更新网络参数 $\theta$，目标是最小化 $(y_j - Q(s_j, a_j; \theta))^2$
+        \State $t \gets t + 1$
+        \If{$t$ 是 $C$ 的倍数}
+            \State 重置目标动作值函数 $Q^- = Q$
+        \EndIf
+    \EndFor
+\EndFor
+\end{algorithmic}
+\end{algorithm}
+
+\end{document}
