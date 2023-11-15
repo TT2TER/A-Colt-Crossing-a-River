@@ -1,5 +1,6 @@
+import os
 from typing import Dict, List, Tuple
-from Replay import ReplayBuffer
+
 import gymnasium as gym
 import matplotlib.pyplot as plt
 import numpy as np
@@ -9,44 +10,47 @@ import torch.nn.functional as F
 import torch.optim as optim
 from IPython.display import clear_output
 import time
-from torch.nn.utils import clip_grad_norm_
+from torchviz import make_dot
+from Replay import ReplayBuffer
+import math
 
 class Network(nn.Module):
-    def __init__(self, in_dim: int, out_dim: int):
+    def __init__(
+        self, 
+        in_dim: int, 
+        out_dim: int, 
+        atom_size: int, 
+        support: torch.Tensor
+    ):
         """Initialization."""
         super(Network, self).__init__()
 
-        # set common feature layer
-        self.feature_layer = nn.Sequential(
+        self.support = support
+        self.out_dim = out_dim
+        self.atom_size = atom_size
+        
+        self.layers = nn.Sequential(
             nn.Linear(in_dim, 128), 
             nn.ReLU(),
-        )
-        
-        # set advantage layer
-        self.advantage_layer = nn.Sequential(
-            nn.Linear(128, 128),
-            nn.ReLU(),
-            nn.Linear(128, out_dim),
-        )
-
-        # set value layer
-        self.value_layer = nn.Sequential(
-            nn.Linear(128, 128),
-            nn.ReLU(),
-            nn.Linear(128, 1),
+            nn.Linear(128, 128), 
+            nn.ReLU(), 
+            nn.Linear(128, out_dim * atom_size)
         )
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         """Forward method implementation."""
-        feature = self.feature_layer(x)
+        dist = self.dist(x)
+        q = torch.sum(dist * self.support, dim=2)
         
-        value = self.value_layer(feature)
-        advantage = self.advantage_layer(feature)
-        # print(value.shape, advantage.shape, advantage.mean(dim=-1, keepdim=True).shape)
-        q = value + advantage - advantage.mean(dim=-1, keepdim=True)
-        # 6 4 3  -[5.5 3.5  2]
-        # 5 3 1 
         return q
+    
+    def dist(self, x: torch.Tensor) -> torch.Tensor:
+        """Get distribution for atoms."""
+        q_atoms = self.layers(x).view(-1, self.out_dim, self.atom_size)
+        dist = F.softmax(q_atoms, dim=-1)
+        dist = dist.clamp(min=1e-3)  # for avoiding nans
+        
+        return dist
     
 class DQNAgent:
     """DQN Agent interacting with environment.
@@ -79,6 +83,10 @@ class DQNAgent:
         max_epsilon: float = 1.0,
         min_epsilon: float = 0.1,
         gamma: float = 0.99,
+        # Categorical DQN parameters
+        v_min: float = 0.0,
+        v_max: float = 200.0,
+        atom_size: int = 51,
     ):
         """Initialization.
         
@@ -108,9 +116,9 @@ class DQNAgent:
         self.gamma = gamma
         
         # device: cpu / gpu
-        self.device = torch.device("cpu")
-        if torch.cuda.is_available():
-            self.device = torch.device("cuda")
+        self.device = torch.device(
+            "cuda" if torch.cuda.is_available() else "cpu"
+        )
         print(self.device)
 
         @torch.no_grad()
@@ -120,12 +128,23 @@ class DQNAgent:
                 nn.init.constant_(m.bias, 0.1)
 
         self._weights_init = _weights_init
+        # Categorical DQN parameters
+        self.v_min = v_min
+        self.v_max = v_max
+        self.atom_size = atom_size
+        self.support = torch.linspace(
+            self.v_min, self.v_max, self.atom_size
+        ).to(self.device)
 
         # networks: dqn, dqn_target
-        self.dqn = Network(obs_dim, action_dim).to(self.device)
+        self.dqn = Network(
+            obs_dim, action_dim, atom_size, self.support
+        ).to(self.device)
+        self.dqn_target = Network(
+            obs_dim, action_dim, atom_size, self.support
+        ).to(self.device)
         #随机初始化dqn参数
         self.dqn.apply(self._weights_init)
-        self.dqn_target = Network(obs_dim, action_dim).to(self.device)
         self.dqn_target.load_state_dict(self.dqn.state_dict())# 将dqn的参数复制给dqn_target
         self.dqn_target.eval() # eval()：这一部分将 dqn_target 设置为评估模式，即在训练过程中不会计算梯度。这是因为在训练过程中，我们只需要使用 dqn_target 来计算目标值，而不需要更新它的参数。
         
@@ -185,8 +204,6 @@ class DQNAgent:
 
         self.optimizer.zero_grad()
         loss.backward()
-        # DuelingNet: we clip the gradients to have their norm less than or equal to 10.
-        clip_grad_norm_(self.dqn.parameters(), 10.0)
         self.optimizer.step()
 
         return loss.item()
@@ -274,51 +291,42 @@ class DQNAgent:
         reward = torch.FloatTensor(samples["rews"].reshape(-1, 1)).to(device)
         done = torch.FloatTensor(samples["done"].reshape(-1, 1)).to(device)
 
-        # G_t   = r + gamma * v(s_{t+1})  if state != Terminal(这个状态不是终止状态)
-        #       = r                       otherwise（终止在了这个状态）
-        # print("state",state)
-        # print("action",action)
-        curr_q_value = self.dqn(state)
-        # print("curr_q_value",curr_q_value)
-        curr_q_value=curr_q_value.gather(1, action)
-        # print("curr_q_value",curr_q_value)
-        # time.sleep(500)
-        '''.gather(1, action)：这一部分使用 .gather 方法来选择张量中的特定元素。在这里，1 表示选择的维度，通常是动作的索引，而 action 是一个张量，包含要选择的动作的索引。
+        # Categorical DQN algorithm
+        delta_z = float(self.v_max - self.v_min) / (self.atom_size - 1)#每个原子的间隔
 
-具体来说，.gather 操作会根据 action 中的索引值，从 self.dqn(state) 返回的张量中选择对应索引位置的值。这是在Q-learning等强化学习算法中常用的操作，用于计算当前状态下选择的动作的Q值。'''
+        with torch.no_grad():#不计算梯度
+            next_action = self.dqn_target(next_state).argmax(1)#选择最大的动作
+            next_dist = self.dqn_target.dist(next_state)#得到下一个状态的分布
+            next_dist = next_dist[range(self.batch_size), next_action]#得到下一个状态的分布的最大动作的分布
 
-        next_q_value = self.dqn_target(
-            next_state
-        ).max(dim=1, keepdim=True)[0].detach()
-        #print("next_q_value",next_q_value)
-        #time.sleep(500)
-        '''self.dqn_target(next_state)：这一部分是将状态 next_state 传递给神经网络模型 self.dqn_target，
-        并得到模型的输出。这通常是一个Q值估计的张量，其中每行表示不同的动作。
+            t_z = reward + (1 - done) * self.gamma * self.support#计算目标分布
+            t_z = t_z.clamp(min=self.v_min, max=self.v_max)#限制目标分布的范围
+            b = (t_z - self.v_min) / delta_z#计算目标分布的原子位置
+            l = b.floor().long()#向下取整
+            u = b.ceil().long()#向上取整
 
-        .max(dim=1, keepdim=True)：这一部分使用 .max 方法在每行上进行操作，dim=1 表示在每行上寻找最大值。
-        keepdim=True 的设置保持了结果的维度一致。
+            offset = (
+                torch.linspace(
+                    0, (self.batch_size - 1) * self.atom_size, self.batch_size
+                ).long()#计算偏移量
+                .unsqueeze(1)#增加维度
+                .expand(self.batch_size, self.atom_size)#扩展维度
+                .to(self.device)
+            )#offset的维度为batch_size*atom_size
 
-        [0]：这一部分用于提取 .max 操作的结果中的最大值。.max 操作返回一个元组，第一个元素是最大值的张量，
-        第二个元素是最大值的索引。
+            proj_dist = torch.zeros(next_dist.size(), device=self.device)#初始化proj_dist
+            proj_dist.view(-1).index_add_(#index_add_()函数的作用是将一个张量tensor中的某些位置的元素累加到另一张量中，其参数为：dim：指定的维度；index：指定的位置；source：源张量
+                0, (l + offset).view(-1), (next_dist * (u.float() - b)).view(-1)
+            )
+            proj_dist.view(-1).index_add_(
+                0, (u + offset).view(-1), (next_dist * (b - l.float())).view(-1)
+            )
 
-        .detach()：这一部分用于分离张量，即从计算图中分离，以避免梯度传播。通常在需要计算梯度的张量和不需要计算梯度的张量之间切换时使用。'''
-        mask = 1 - done
-        target = (reward + self.gamma * next_q_value * mask).to(self.device)
-        # print("target",target)
-        # calculate dqn loss
-        loss = F.smooth_l1_loss(curr_q_value, target)
-        # print("loss",loss)
-        # 生成计算图
-        # dot = make_dot(loss)
+        dist = self.dqn.dist(state)#得到当前状态的分布
+        log_p = torch.log(dist[range(self.batch_size), action])#得到当前状态的分布的动作的概率的对数
 
-        # # 显示计算图
-        # dot.view()
-        # time.sleep(500)
-        '''
-        Smooth L1损失是一种在回归问题中常用的损失函数，它是平方损失和L1损失的结合。当预测值和真实值之间的差距很小（小于1）时，
-        Smooth L1损失表现为平方损失，当差距较大时，表现为L1损失。这样做的好处是，Smooth L1损失在处理离群点（outliers）时比平方损失更稳定，
-        而在差距较小的情况下，又能保持平方损失的良好性质。
-        '''
+        loss = -(proj_dist * log_p).sum(1).mean()#
+
 
         return loss
 
@@ -347,7 +355,6 @@ class DQNAgent:
         plt.title('epsilons')
         plt.plot(epsilons)
         plt.show()
-
 
 # environment
 env = gym.make("CartPole-v1", max_episode_steps=500, render_mode="rgb_array")

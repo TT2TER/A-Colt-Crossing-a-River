@@ -1,6 +1,5 @@
-import os
 from typing import Dict, List, Tuple
-
+from Replay import ReplayBuffer
 import gymnasium as gym
 import matplotlib.pyplot as plt
 import numpy as np
@@ -10,53 +9,9 @@ import torch.nn.functional as F
 import torch.optim as optim
 from IPython.display import clear_output
 import time
-from torchviz import make_dot
 
 
-class ReplayBuffer:
-    """A simple numpy replay buffer."""
 
-    def __init__(self, obs_dim: int, size: int, batch_size: int = 32):
-        self.obs_buf = np.zeros([size, obs_dim], dtype=np.float32)
-        '''在深度学习和机器学习中，32位浮点数（float32）常常被用作默认的数据类型，原因有两个：
-
-精度：对于大多数应用来说，32位浮点数提供的精度已经足够。它能够表示大约7位十进制数，这对于大多数机器学习任务来说已经足够。
-
-计算效率：相比64位浮点数（float64），32位浮点数在计算上更加高效。这是因为32位浮点数占用的内存更少，可以减少内存带宽和缓存的使用，从而提高计算效率。'''
-        self.next_obs_buf = np.zeros([size, obs_dim], dtype=np.float32)
-        self.acts_buf = np.zeros([size], dtype=np.float32)
-        self.rews_buf = np.zeros([size], dtype=np.float32)
-        self.done_buf = np.zeros([size], dtype=np.float32)
-        self.max_size, self.batch_size = size, batch_size
-        self.ptr, self.size, = 0, 0
-
-    def store(
-        self,
-        obs: np.ndarray,
-        act: np.ndarray, 
-        rew: float, 
-        next_obs: np.ndarray, 
-        done: bool,
-    ):
-        self.obs_buf[self.ptr] = obs
-        self.next_obs_buf[self.ptr] = next_obs
-        self.acts_buf[self.ptr] = act
-        self.rews_buf[self.ptr] = rew
-        self.done_buf[self.ptr] = done
-        self.ptr = (self.ptr + 1) % self.max_size
-        self.size = min(self.size + 1, self.max_size)
-
-    def sample_batch(self) -> Dict[str, np.ndarray]:
-        idxs = np.random.choice(self.size, size=self.batch_size, replace=False)
-        return dict(obs=self.obs_buf[idxs],
-                    next_obs=self.next_obs_buf[idxs],
-                    acts=self.acts_buf[idxs],
-                    rews=self.rews_buf[idxs],
-                    done=self.done_buf[idxs])
-
-    def __len__(self) -> int:
-        return self.size
-    
 class Network(nn.Module):
     def __init__(self, in_dim: int, out_dim: int):
         """Initialization."""

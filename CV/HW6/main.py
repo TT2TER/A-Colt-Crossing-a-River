@@ -59,6 +59,7 @@ if __name__ == "__main__":
         DEVICE = torch.device("cpu")
         if torch.cuda.is_available():
             DEVICE = torch.device("cuda")
+        print(DEVICE)
         fasioncnn = fasioncnn.to(DEVICE)
 
         criterion = nn.CrossEntropyLoss().to(DEVICE)
@@ -100,6 +101,7 @@ if __name__ == "__main__":
         DEVICE = torch.device("cpu")
         if torch.cuda.is_available():
             DEVICE = torch.device("cuda")
+        print(DEVICE)
         fasioncnn = fasioncnn.to(DEVICE)
         fasioncnn.load_state_dict(torch.load('model_parameters.pth'))
         fasioncnn.eval()

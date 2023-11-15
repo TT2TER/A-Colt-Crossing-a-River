@@ -1,5 +1,6 @@
+import os
 from typing import Dict, List, Tuple
-from Replay import ReplayBuffer
+
 import gymnasium as gym
 import matplotlib.pyplot as plt
 import numpy as np
@@ -9,45 +10,26 @@ import torch.nn.functional as F
 import torch.optim as optim
 from IPython.display import clear_output
 import time
-from torch.nn.utils import clip_grad_norm_
+from torchviz import make_dot
+from Replay import ReplayBuffer
 
 class Network(nn.Module):
     def __init__(self, in_dim: int, out_dim: int):
         """Initialization."""
         super(Network, self).__init__()
 
-        # set common feature layer
-        self.feature_layer = nn.Sequential(
+        self.layers = nn.Sequential(
             nn.Linear(in_dim, 128), 
             nn.ReLU(),
-        )
-        
-        # set advantage layer
-        self.advantage_layer = nn.Sequential(
-            nn.Linear(128, 128),
-            nn.ReLU(),
-            nn.Linear(128, out_dim),
-        )
-
-        # set value layer
-        self.value_layer = nn.Sequential(
-            nn.Linear(128, 128),
-            nn.ReLU(),
-            nn.Linear(128, 1),
+            nn.Linear(128, 128), 
+            nn.ReLU(), 
+            nn.Linear(128, out_dim)
         )
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         """Forward method implementation."""
-        feature = self.feature_layer(x)
-        
-        value = self.value_layer(feature)
-        advantage = self.advantage_layer(feature)
-        # print(value.shape, advantage.shape, advantage.mean(dim=-1, keepdim=True).shape)
-        q = value + advantage - advantage.mean(dim=-1, keepdim=True)
-        # 6 4 3  -[5.5 3.5  2]
-        # 5 3 1 
-        return q
-    
+        return self.layers(x)
+
 class DQNAgent:
     """DQN Agent interacting with environment.
     
@@ -66,6 +48,9 @@ class DQNAgent:
         optimizer (torch.optim): optimizer for training dqn
         transition (list): transition information including 
                            state, action, reward, next_state, done
+        use_n_step (bool): whether to use n_step memory
+        n_step (int): step number to calculate n-step td error
+        memory_n (ReplayBuffer): n-step replay buffer
     """
 
     def __init__(
@@ -79,6 +64,8 @@ class DQNAgent:
         max_epsilon: float = 1.0,
         min_epsilon: float = 0.1,
         gamma: float = 0.99,
+        # N-step Learning
+        n_step: int = 3,
     ):
         """Initialization.
         
@@ -92,12 +79,13 @@ class DQNAgent:
             max_epsilon (float): max value of epsilon
             min_epsilon (float): min value of epsilon
             gamma (float): discount factor
+            n_step (int): step number to calculate n-step td error
         """
         obs_dim = env.observation_space.shape[0]
         action_dim = env.action_space.n
         
         self.env = env
-        self.memory = ReplayBuffer(obs_dim, memory_size, batch_size)
+        # self.memory = ReplayBuffer(obs_dim, memory_size, batch_size)
         self.batch_size = batch_size
         self.epsilon = max_epsilon
         self.epsilon_decay = epsilon_decay
@@ -106,11 +94,23 @@ class DQNAgent:
         self.min_epsilon = min_epsilon
         self.target_update = target_update
         self.gamma = gamma
+
+        self.memory = ReplayBuffer(
+            obs_dim, memory_size, batch_size, n_step=1, gamma=gamma
+        )
+        
+        # memory for N-step Learning
+        self.use_n_step = True if n_step > 1 else False
+        if self.use_n_step:
+            self.n_step = n_step
+            self.memory_n = ReplayBuffer(
+                obs_dim, memory_size, batch_size, n_step=n_step, gamma=gamma
+            )
         
         # device: cpu / gpu
-        self.device = torch.device("cpu")
-        if torch.cuda.is_available():
-            self.device = torch.device("cuda")
+        self.device = torch.device(
+            "cuda" if torch.cuda.is_available() else "cpu"
+        )
         print(self.device)
 
         @torch.no_grad()
@@ -169,7 +169,16 @@ class DQNAgent:
 
         if not self.is_test:
             self.transition += [reward, next_state, done]
-            self.memory.store(*self.transition)#存储transition
+            # N-step transition
+            if self.use_n_step:
+                one_step_transition = self.memory_n.store(*self.transition)
+            # 1-step transition
+            else:
+                one_step_transition = self.transition
+
+            # add a single step transition
+            if one_step_transition:
+                self.memory.store(*one_step_transition)
             '''星号（*）操作符用于解包（unpack）序列。在这个上下文中，*self.transition将self.transition这个序列中的所有元素解包，然后传递给self.memory.store方法。
 
 假设self.transition是一个包含五个元素的元组（或列表），例如self.transition = (obs, act, rew, next_obs, done)，那么*self.transition就相当于obs, act, rew, next_obs, done'''
@@ -181,12 +190,20 @@ class DQNAgent:
         samples = self.memory.sample_batch()#从memory中随机采样,返回的是字典，值是batch_size大小的数组
         # print(samples)
         # time.sleep(500)
-        loss = self._compute_dqn_loss(samples)
+        indices = samples["indices"]
+        loss = self._compute_dqn_loss(samples, self.gamma)
+
+        # N-step Learning loss
+        # we are gonna combine 1-step loss and n-step loss so as to
+        # prevent high-variance.
+        if self.use_n_step:
+            samples = self.memory_n.sample_batch_from_idxs(indices)
+            gamma = self.gamma ** self.n_step
+            n_loss = self._compute_dqn_loss(samples, gamma)
+            loss += n_loss
 
         self.optimizer.zero_grad()
         loss.backward()
-        # DuelingNet: we clip the gradients to have their norm less than or equal to 10.
-        clip_grad_norm_(self.dqn.parameters(), 10.0)
         self.optimizer.step()
 
         return loss.item()
@@ -265,7 +282,7 @@ class DQNAgent:
         # reset
         self.env = naive_env
 
-    def _compute_dqn_loss(self, samples: Dict[str, np.ndarray]) -> torch.Tensor:
+    def _compute_dqn_loss(self, samples: Dict[str, np.ndarray],gamma: float) -> torch.Tensor:
         """Return dqn loss."""
         device = self.device  # for shortening the following lines
         state = torch.FloatTensor(samples["obs"]).to(device)
@@ -303,7 +320,7 @@ class DQNAgent:
 
         .detach()：这一部分用于分离张量，即从计算图中分离，以避免梯度传播。通常在需要计算梯度的张量和不需要计算梯度的张量之间切换时使用。'''
         mask = 1 - done
-        target = (reward + self.gamma * next_q_value * mask).to(self.device)
+        target = (reward + gamma * next_q_value * mask).to(self.device)
         # print("target",target)
         # calculate dqn loss
         loss = F.smooth_l1_loss(curr_q_value, target)
@@ -347,7 +364,6 @@ class DQNAgent:
         plt.title('epsilons')
         plt.plot(epsilons)
         plt.show()
-
 
 # environment
 env = gym.make("CartPole-v1", max_episode_steps=500, render_mode="rgb_array")
