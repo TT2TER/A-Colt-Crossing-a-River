@@ -68,3 +68,5 @@ ComputerCompositionandArchitecture/计算机组成原理/自测题/__MACOSX
 ComputerCompositionandArchitecture/计算机组成原理/自测题/*
 *.gv
 
+CV/HW6/data/FashionMNIST
+CV/HW6/*.pth

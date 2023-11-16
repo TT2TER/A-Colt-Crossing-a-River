@@ -1,5 +1,6 @@
+import os
 from typing import Dict, List, Tuple
-from Replay import ReplayBuffer
+
 import gymnasium as gym
 import matplotlib.pyplot as plt
 import numpy as np
@@ -9,44 +10,25 @@ import torch.nn.functional as F
 import torch.optim as optim
 from IPython.display import clear_output
 import time
-from torch.nn.utils import clip_grad_norm_
+from torchviz import make_dot
+from Replay import PrioritizedReplayBuffer
 
 class Network(nn.Module):
     def __init__(self, in_dim: int, out_dim: int):
         """Initialization."""
         super(Network, self).__init__()
 
-        # set common feature layer
-        self.feature_layer = nn.Sequential(
+        self.layers = nn.Sequential(
             nn.Linear(in_dim, 128), 
             nn.ReLU(),
-        )
-        
-        # set advantage layer
-        self.advantage_layer = nn.Sequential(
-            nn.Linear(128, 128),
-            nn.ReLU(),
-            nn.Linear(128, out_dim),
-        )
-
-        # set value layer
-        self.value_layer = nn.Sequential(
-            nn.Linear(128, 128),
-            nn.ReLU(),
-            nn.Linear(128, 1),
+            nn.Linear(128, 128), 
+            nn.ReLU(), 
+            nn.Linear(128, out_dim)
         )
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         """Forward method implementation."""
-        feature = self.feature_layer(x)
-        
-        value = self.value_layer(feature)
-        advantage = self.advantage_layer(feature)
-        # print(value.shape, advantage.shape, advantage.mean(dim=-1, keepdim=True).shape)
-        q = value + advantage - advantage.mean(dim=-1, keepdim=True)
-        # 6 4 3  -[5.5 3.5  2]
-        # 5 3 1 
-        return q
+        return self.layers(x)
     
 class DQNAgent:
     """DQN Agent interacting with environment.
@@ -79,6 +61,10 @@ class DQNAgent:
         max_epsilon: float = 1.0,
         min_epsilon: float = 0.1,
         gamma: float = 0.99,
+        # PER parameters
+        alpha: float = 0.2,
+        beta: float = 0.6,
+        prior_eps: float = 1e-6,
     ):
         """Initialization.
         
@@ -92,12 +78,15 @@ class DQNAgent:
             max_epsilon (float): max value of epsilon
             min_epsilon (float): min value of epsilon
             gamma (float): discount factor
+            alpha (float): determines how much prioritization is used
+            beta (float): determines how much importance sampling is used
+            prior_eps (float): guarantees every transition can be sampled
         """
         obs_dim = env.observation_space.shape[0]
         action_dim = env.action_space.n
         
         self.env = env
-        self.memory = ReplayBuffer(obs_dim, memory_size, batch_size)
+        # self.memory = ReplayBuffer(obs_dim, memory_size, batch_size)
         self.batch_size = batch_size
         self.epsilon = max_epsilon
         self.epsilon_decay = epsilon_decay
@@ -120,6 +109,13 @@ class DQNAgent:
                 nn.init.constant_(m.bias, 0.1)
 
         self._weights_init = _weights_init
+
+        # In DQN, We used "ReplayBuffer(obs_dim, memory_size, batch_size)"
+        self.beta = beta
+        self.prior_eps = prior_eps
+        self.memory = PrioritizedReplayBuffer(
+            obs_dim, memory_size, batch_size, alpha
+        )
 
         # networks: dqn, dqn_target
         self.dqn = Network(obs_dim, action_dim).to(self.device)
@@ -178,16 +174,36 @@ class DQNAgent:
 
     def update_model(self) -> torch.Tensor:
         """Update the model by gradient descent."""
-        samples = self.memory.sample_batch()#从memory中随机采样,返回的是字典，值是batch_size大小的数组
+        # samples = self.memory.sample_batch()#从memory中随机采样,返回的是字典，值是batch_size大小的数组
         # print(samples)
         # time.sleep(500)
-        loss = self._compute_dqn_loss(samples)
+
+        # PER needs beta to calculate weights
+        samples = self.memory.sample_batch(self.beta)
+        # print(samples)
+        weights = torch.FloatTensor(
+            samples["weights"].reshape(-1, 1)
+        ).to(self.device)
+        indices = samples["indices"]
+        #print(samples)
+
+        # loss = self._compute_dqn_loss(samples)
+        # PER: importance sampling before average
+        elementwise_loss = self._compute_dqn_loss(samples)
+        loss = torch.mean(elementwise_loss * weights)
+        # print(loss)
+        # time.sleep(5)
 
         self.optimizer.zero_grad()
         loss.backward()
-        # DuelingNet: we clip the gradients to have their norm less than or equal to 10.
-        clip_grad_norm_(self.dqn.parameters(), 10.0)
         self.optimizer.step()
+
+        # PER: update priorities
+        loss_for_prior = elementwise_loss.detach().cpu().numpy()
+        new_priorities = loss_for_prior + self.prior_eps
+        #print(new_priorities)
+        #print(type(new_priorities))
+        self.memory.update_priorities(indices, new_priorities)
 
         return loss.item()
         
@@ -208,6 +224,10 @@ class DQNAgent:
 
             state = next_state
             score += reward
+
+            # PER: increase beta
+            fraction = min(frame_idx / num_frames, 1.0)
+            self.beta = self.beta + fraction * (1.0 - self.beta)
 
             # if episode ends
             if done:
@@ -306,7 +326,8 @@ class DQNAgent:
         target = (reward + self.gamma * next_q_value * mask).to(self.device)
         # print("target",target)
         # calculate dqn loss
-        loss = F.smooth_l1_loss(curr_q_value, target)
+        #PRE 损失不降维
+        loss = F.smooth_l1_loss(curr_q_value, target, reduction="none")
         # print("loss",loss)
         # 生成计算图
         # dot = make_dot(loss)
@@ -348,7 +369,6 @@ class DQNAgent:
         plt.plot(epsilons)
         plt.show()
 
-
 # environment
 env = gym.make("CartPole-v1", max_episode_steps=500, render_mode="rgb_array")
 
@@ -362,13 +382,14 @@ def seed_torch(seed):
         torch.backends.cudnn.deterministic = True
 
 np.random.seed(seed)
+# random.seed(seed)
 seed_torch(seed)
 
 # parameters
 num_frames = 10000
 memory_size = 1000
 batch_size = 32
-target_update = 100
+target_update = 150
 epsilon_decay = 1 / 2000
 
 if __name__ == "__main__":
