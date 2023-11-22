@@ -15,6 +15,36 @@ def filter_labels(data):
     mask = labels < 5
     return data[mask], labels[mask]
 
+
+def visualize_kmeans(kmeans, sift_features):
+    # Reduce dimensionality for visualization (using PCA)
+    pca = PCA(n_components=2)
+    reduced_features = pca.fit_transform(sift_features)
+    reduced_centers = pca.transform(kmeans.cluster_centers_)
+
+    # Plot the k-means clusters
+    plt.scatter(
+        reduced_features[:, 0],
+        reduced_features[:, 1],
+        c=kmeans.labels_,
+        cmap="viridis",
+        s=5,
+        alpha=0.5,
+    )
+    plt.scatter(
+        reduced_centers[:, 0],
+        reduced_centers[:, 1],
+        c="red",
+        marker="X",
+        s=100,
+        label="Cluster Centers",
+    )
+    plt.title("K-Means Clustering")
+    plt.xlabel("Principal Component 1")
+    plt.ylabel("Principal Component 2")
+    plt.legend()
+    plt.show()
+    
 BATCH_SIZE = 64
 
 is_test = 1
@@ -84,7 +114,7 @@ if __name__ == "__main__":
                 loss = criterion(outputs, labels)
                 loss.backward()
                 optimizer.step()
-                losses.append(loss.to('cpu').data.item());
+                losses.append(loss.to('cpu').data.item())
                 if (i+1) % 100 == 0:
                     print ('Epoch : %d/%d, Iter : %d/%d,  Loss: %.4f'%(epoch+1, TOTAL_EPOCHS, i+1, len(training_data)//BATCH_SIZE, loss.data.item()))
 
