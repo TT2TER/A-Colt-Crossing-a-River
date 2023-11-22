@@ -70,3 +70,4 @@ ComputerCompositionandArchitecture/计算机组成原理/自测题/*
 
 CV/HW6/data/FashionMNIST
 CV/HW6/*.pth
+*.pickle
