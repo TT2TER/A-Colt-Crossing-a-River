@@ -71,3 +71,6 @@ ComputerCompositionandArchitecture/计算机组成原理/自测题/*
 CV/HW6/data/FashionMNIST
 CV/HW6/*.pth
 *.pickle
+NLP/HW2/tnews-2023/sgns.target.word-word.dynwin5.thr10.neg5.dim300.iter5
+NLP/HW2/tnews-2023/output/model.ckpt
+NLP/HW2/tnews-2023/out.txt

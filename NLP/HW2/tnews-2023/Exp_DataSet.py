@@ -3,6 +3,32 @@ import json
 import numpy as np
 import torch
 from torch.utils.data import TensorDataset
+from gensim.models.keyedvectors import KeyedVectors
+import pickle
+import jieba
+from tqdm import tqdm
+
+stopwords = []
+def mystrip(ls):
+    """
+    函数功能：消除句尾换行
+    """
+    for i in range(len(ls)):
+        ls[i] = ls[i].strip("\n")
+    return ls
+
+def remove_stopwords(_words):
+    """
+    函数功能：去掉停用词
+    """
+    _i = 0
+    for _ in range(len(_words)):
+        if _words[_i] in stopwords or _words[_i].strip() == "":
+            # print(_words[_i])
+            _words.pop(_i)
+        else:
+            _i += 1
+    return _words
 
 class Dictionary(object):
     def __init__(self, path):
@@ -46,8 +72,31 @@ class Corpus(object):
         #-----------------------------------------------------begin-----------------------------------------------------#
         # 若要采用预训练的 embedding, 需处理得到 token->embedding 的映射矩阵 embedding_weight。矩阵的格式参考 nn.Embedding() 中的参数 _weight
         # 注意，需考虑 [PAD] 和 [UNK] 两个特殊词向量的设置
-
-
+        # 先检查本地有没有存好的 embedding_weight，若有则直接读取，若没有则生成并存储
+        if os.path.exists("embedding_weight.pkl"):
+            with open("embedding_weight.pkl", "rb") as f:
+                self.embedding_weight = pickle.load(f)
+                print("loaded embedding_weight...")
+        else:
+            # 生成 embedding_weight
+            print("loading word2vec...")
+            word_vectors = KeyedVectors.load_word2vec_format("sgns.target.word-word.dynwin5.thr10.neg5.dim300.iter5")
+            print("loading end")
+            self.embedding_weight = np.zeros((len(self.dictionary.tkn2word), 300))
+            # 先处理 [PAD] 和 [UNK]
+            self.embedding_weight[0] = np.zeros(300).astype("float32")
+            # [UNK]会在后面处理
+            # 再处理其他词
+            for i in range(1, len(self.dictionary.tkn2word)):
+                if self.dictionary.tkn2word[i] in word_vectors:
+                    self.embedding_weight[i] = word_vectors.get_vector(self.dictionary.tkn2word[i])
+                else:
+                    self.embedding_weight[i] = np.random.uniform(-0.01, 0.01, 300).astype("float32")#这个是UNK的词向量？
+            # 存储 embedding_weight
+            self.embedding_weight = torch.from_numpy(self.embedding_weight).to(torch.float32)
+            with open("embedding_weight.pkl", "wb") as f:
+                pickle.dump(self.embedding_weight, f)
+        
         #------------------------------------------------------end------------------------------------------------------#
 
     def pad(self, origin_token_seq):
@@ -66,12 +115,23 @@ class Corpus(object):
         idss = []
         labels = []
         with open(path, 'r', encoding='utf8') as f:
-            for line in f:
+            total_lines = sum(1 for line in f)
+        with open(path, 'r', encoding='utf8') as f:
+            for line in tqdm(f,total=total_lines,dynamic_ncols=True):
+                
                 one_data = json.loads(line)  # 读取一条数据
                 sent = one_data['sentence']
                 #-----------------------------------------------------begin-----------------------------------------------------#
                 # 若要采用预训练的 embedding, 需在此处对 sent 进行分词
-
+                # 使用jieba分词
+                sent = jieba.lcut(sent)
+                global stopwords
+                # 读取停用词列表：
+                with open("./stopwords.txt", encoding="utf-8") as f:
+                    stopwords = f.readlines()
+                    stopwords = mystrip(stopwords)
+                # 去除停用词
+                sent = remove_stopwords(sent)
 
                 #------------------------------------------------------end------------------------------------------------------#
                 # 向词典中添加词
