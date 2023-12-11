@@ -1,0 +1,20 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../riscv.srcs/sources_1/new" \
+"../../../../riscv.srcs/sources_1/new/Alu.v" \
+"../../../../riscv.srcs/sources_1/new/Alu_Mux.v" \
+"../../../../riscv.srcs/sources_1/new/Data_Mem.v" \
+"../../../../riscv.srcs/sources_1/new/Imm_Gen.v" \
+"../../../../riscv.srcs/sources_1/new/Ins_Mem.v" \
+"../../../../riscv.srcs/sources_1/new/Reg_File.v" \
+"../../../../riscv.srcs/sources_1/new/Reg_Mux.v" \
+"../../../../riscv.srcs/sources_1/new/control_unit.v" \
+"../../../../riscv.srcs/sources_1/new/npc.v" \
+"../../../../riscv.srcs/sources_1/new/pc.v" \
+"../../../../riscv.srcs/sources_1/new/top_cpu.v" \
+"../../../../riscv.srcs/sim_1/new/testbench.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Sun Dec 10 21:23:32 2023
+# Process ID: 30480
+# Current directory: E:/MAYU/Documents/A-Colt-Crossing-a-River/ComputerCompositionandArchitecture/HWend/imm_gen_test/imm_gen_test.sim/sim_1/behav/xsim
+# Command line: wbtcv.exe -mode batch -source E:/MAYU/Documents/A-Colt-Crossing-a-River/ComputerCompositionandArchitecture/HWend/imm_gen_test/imm_gen_test.sim/sim_1/behav/xsim/xsim.dir/Imm_Gen_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: E:/MAYU/Documents/A-Colt-Crossing-a-River/ComputerCompositionandArchitecture/HWend/imm_gen_test/imm_gen_test.sim/sim_1/behav/xsim/webtalk.log
+# Journal file: E:/MAYU/Documents/A-Colt-Crossing-a-River/ComputerCompositionandArchitecture/HWend/imm_gen_test/imm_gen_test.sim/sim_1/behav/xsim\webtalk.jou
+#-----------------------------------------------------------
+source E:/MAYU/Documents/A-Colt-Crossing-a-River/ComputerCompositionandArchitecture/HWend/imm_gen_test/imm_gen_test.sim/sim_1/behav/xsim/xsim.dir/Imm_Gen_tb_behav/webtalk/xsim_webtalk.tcl -notrace

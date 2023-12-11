@@ -10,30 +10,50 @@ from Exp_DataSet import Corpus
 from Exp_Model import BiLSTM_model, Transformer_model
 import pickle
 import matplotlib.pyplot as plt
+from transformers import AutoTokenizer, AutoModel
 all_accs = {}
 all_epoches = []
-def draw():
-    #折线图
-    x = all_epoches#横坐标
-    k1 = all_accs[0]#线1的纵坐标
-    k2 = all_accs[1]#线2的纵坐标
-    k3 = all_accs[2]#线3的纵坐标
-    k4 = all_accs[3]#线4的纵坐标
-    k5 = all_accs[4]#线5的纵坐标
-    k6 = all_accs[5]#线6的纵坐标
-    k7 = all_accs[6]#线7的纵坐标
-    plt.plot(x,k1,'s-',color = 'r',label="BLSTM-H_t(Avg)-L+L")
-    plt.plot(x,k2,'o-',color = 'g',label="BLSTM-H_t")
-    plt.plot(x,k3,'*-',color = 'b',label="BLSTM-H_{0-t}")
-    plt.plot(x,k4,'+-',color = 'y',label="BLSTM")
-    plt.plot(x,k5,'x-',color = 'c',label="BLSTM-H_{0-t}(Max)")
-    plt.plot(x,k6,'d-',color = 'm',label="BLSTM-H_{0-t}(Avg)")
-    plt.plot(x,k7,'v-',color = 'k',label="BLSTM-ATTN")#Attention-Based Bidirectional Long Short-Term Memory Networks for Relation Classification (Zhou et al., ACL 2016)
-    plt.xlabel("region length")#横坐标名字
-    plt.ylabel("accuracy")#纵坐标名字
-    plt.legend(loc = "best")#图例
-    plt.savefig("acc.png")
-    plt.show()
+def draw(part):
+    if part==1:
+        plt.title("BiLSTM")
+        #折线图
+        x = all_epoches#横坐标
+        k1 = all_accs[0]#线1的纵坐标
+        k2 = all_accs[1]#线2的纵坐标
+        k3 = all_accs[2]#线3的纵坐标
+        k4 = all_accs[3]#线4的纵坐标
+        k5 = all_accs[4]#线5的纵坐标
+        k6 = all_accs[5]#线6的纵坐标
+        k7 = all_accs[6]#线7的纵坐标
+        plt.plot(x,k1,'s-',color = 'r',label="BLSTM-H_t(Avg)-L+L")
+        plt.plot(x,k2,'o-',color = 'g',label="BLSTM-H_t")
+        plt.plot(x,k3,'*-',color = 'b',label="BLSTM-H_{0-t}")
+        plt.plot(x,k4,'+-',color = 'y',label="BLSTM")
+        plt.plot(x,k5,'x-',color = 'c',label="BLSTM-H_{0-t}(Max)")
+        plt.plot(x,k6,'d-',color = 'm',label="BLSTM-H_{0-t}(Avg)")
+        plt.plot(x,k7,'v-',color = 'k',label="BLSTM-ATTN")#Attention-Based Bidirectional Long Short-Term Memory Networks for Relation Classification (Zhou et al., ACL 2016)
+        plt.xlabel("region length")#横坐标名字
+        plt.ylabel("accuracy")#纵坐标名字
+        plt.legend(loc = "best")#图例
+        plt.savefig("acc.png")
+        plt.show()
+    if part==2:
+        plt.title("Transformer")
+        #折线图
+        x = all_epoches
+        k1 = all_accs[0]#线1的纵坐标
+        k2 = all_accs[1]#线2的纵坐标
+        k3 = all_accs[2]#线3的纵坐标
+        # k4 = all_accs[3]#线4的纵坐标
+        plt.plot(x,k1,'s-',color = 'r',label="TRANS_sum")
+        plt.plot(x,k2,'o-',color = 'g',label="TRANS_avg")
+        plt.plot(x,k3,'*-',color = 'b',label="TRANS_last")
+        # plt.plot(x,k4,'+-',color = 'y',label="TRANS_max")
+        plt.xlabel("region length")#横坐标名字
+        plt.ylabel("accuracy")#纵坐标名字
+        plt.legend(loc = "best")#图例
+        plt.savefig("acc_transformer.png")
+        plt.show()
 
 def train(method):
     '''
@@ -81,6 +101,7 @@ def train(method):
 
         if valid_acc > max_valid_acc:
             torch.save(model, os.path.join(output_folder, "model.ckpt"))
+            torch.save(model.state_dict(), os.path.join(output_folder, "model_state_dict.ckpt"))
 
         print(f"epoch: {epoch}, train loss: {train_loss:.4f}, train accuracy: {train_acc*100:.2f}%, valid accuracy: {valid_acc*100:.2f}%")
         epoches.append(epoch)
@@ -117,6 +138,7 @@ def predict(method):
     test_pred = []
 
     model = torch.load(os.path.join(output_folder, "model.ckpt")).to(device)
+    print("best model loaded")
     model.eval()
     with torch.no_grad():
         for data in tqdm(data_loader_test, dynamic_ncols=True): 
@@ -152,6 +174,7 @@ if __name__ == '__main__':
     batch_size = 64
     num_epochs = 5
     lr = 1e-3
+    part =2 #1,2,3 三个部分
     #------------------------------------------------------end------------------------------------------------------#
     #检查是否有dataset.pkl文件，有则直接读取，没有则生成
     if os.path.exists("./dataset.pkl"):
@@ -169,11 +192,18 @@ if __name__ == '__main__':
     data_loader_train = DataLoader(dataset=dataset.train, batch_size=batch_size, shuffle=True)
     data_loader_valid = DataLoader(dataset=dataset.valid, batch_size=batch_size, shuffle=False)
     data_loader_test = DataLoader(dataset=dataset.test, batch_size=batch_size, shuffle=False)
-    for i in range(0,7):
+    if part==1:
+        times=7
+    if part==2:
+        times=3
+    for i in range (times):
         print("method:",i)
         #-----------------------------------------------------begin-----------------------------------------------------#
         # 可修改选择的模型以及传入的参数
-        model = BiLSTM_model(vocab_size=vocab_size, ntoken=max_token_per_sent, d_emb=embedding_dim,embedding_weight=dataset.embedding_weight).to(device)                            
+        if part==1:
+            model = BiLSTM_model(vocab_size=vocab_size, ntoken=max_token_per_sent, d_emb=embedding_dim,embedding_weight=dataset.embedding_weight).to(device)
+        if part==2:
+            model = Transformer_model(vocab_size=vocab_size, ntoken=max_token_per_sent, d_emb=embedding_dim,embedding_weight=dataset.embedding_weight).to(device)                            
         #------------------------------------------------------end------------------------------------------------------#
         
         # 设置损失函数
@@ -186,4 +216,4 @@ if __name__ == '__main__':
 
         # 对测试集进行预测
         predict(i)
-    draw()
+    draw(part)

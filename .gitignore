@@ -37,7 +37,7 @@
 
 *.json
 
-*test*.*
+# *test*.*
 *output*.*
 *example*.*
 *.tmp
@@ -74,3 +74,8 @@ CV/HW6/*.pth
 NLP/HW2/tnews-2023/sgns.target.word-word.dynwin5.thr10.neg5.dim300.iter5
 NLP/HW2/tnews-2023/output/model.ckpt
 NLP/HW2/tnews-2023/out.txt
+NLP/HW2/tnews-2023/models*
+NLP/HW2/tnews-2023/data/*
+NLP/HW2/tnews-2023/best_ernie/model.ckpt
+NLP/HW2/tnews-2023/best_lstm/model_state_dict.ckpt
+NLP/HW2/tnews-2023/best_lstm/model.ckpt
